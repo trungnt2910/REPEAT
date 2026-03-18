@@ -1,0 +1,1483 @@
+# --- REPEAT: ELF Headers ---
+# --- REPEAT: CodeView Source Files ---
+  .cv_file 1 ".\\.\\data\\cv_nested_inlines.cpp"
+# --- REPEAT: ELF Sections ---
+.section .elf, "rwx"
+.globl __elf_base
+__elf_base:
+.org __elf_base + 0
+__elf_seg_A:
+.byte 0x7f
+.byte 0x45
+.byte 0x4c
+.byte 0x46
+.byte 0x02
+.byte 0x01
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x03
+.byte 0x00
+.byte 0x3e
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x09
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x38
+.byte 0x00
+.byte 0x09
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x15
+.byte 0x00
+.byte 0x13
+.byte 0x00
+.byte 0x06
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xf8
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xf8
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x08
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x05
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x20
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x20
+.byte 0x13
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x20
+.byte 0x13
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x53
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x53
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x06
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x60
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x88
+.byte 0x0c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x06
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x60
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x60
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x08
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x52
+.byte 0xe5
+.byte 0x74
+.byte 0x64
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x78
+.byte 0x23
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x60
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x88
+.byte 0x0c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x50
+.byte 0xe5
+.byte 0x74
+.byte 0x64
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xc4
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xc4
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xc4
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x51
+.byte 0xe5
+.byte 0x74
+.byte 0x64
+.byte 0x06
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x38
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x38
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x38
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x24
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x24
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x04
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x03
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x47
+.byte 0x4e
+.byte 0x55
+.byte 0x00
+.byte 0x63
+.byte 0xd1
+.byte 0x94
+.byte 0xb4
+.byte 0x13
+.byte 0x48
+.byte 0x46
+.byte 0xb7
+.byte 0x55
+.byte 0xe9
+.byte 0xb7
+.byte 0x6b
+.byte 0x9f
+.byte 0x2a
+.byte 0x1d
+.byte 0x7d
+.byte 0x50
+.byte 0x3b
+.byte 0x98
+.byte 0x6c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x12
+.byte 0x00
+.byte 0x07
+.byte 0x00
+.byte 0x20
+.byte 0x13
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x53
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x1a
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x40
+.byte 0x00
+.byte 0x00
+.byte 0x80
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x27
+.byte 0x28
+.byte 0x3f
+.byte 0x38
+.byte 0x00
+.byte 0x5f
+.byte 0x5a
+.byte 0x31
+.byte 0x31
+.byte 0x63
+.byte 0x61
+.byte 0x6c
+.byte 0x6c
+.byte 0x5f
+.byte 0x6e
+.byte 0x65
+.byte 0x73
+.byte 0x74
+.byte 0x65
+.byte 0x64
+.byte 0x69
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x1b
+.byte 0x03
+.byte 0x3b
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x5c
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x2c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x14
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x01
+.byte 0x7a
+.byte 0x52
+.byte 0x00
+.byte 0x01
+.byte 0x78
+.byte 0x10
+.byte 0x01
+.byte 0x1b
+.byte 0x0c
+.byte 0x07
+.byte 0x08
+.byte 0x90
+.byte 0x01
+.byte 0x00
+.byte 0x00
+.byte 0x1c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x1c
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x28
+.byte 0x10
+.byte 0x00
+.byte 0x00
+.byte 0x53
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x41
+.byte 0x0e
+.byte 0x10
+.byte 0x86
+.byte 0x02
+.byte 0x43
+.byte 0x0d
+.byte 0x06
+.byte 0x02
+.byte 0x4e
+.byte 0x0c
+.byte 0x07
+.byte 0x08
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.org __elf_base + 4896
+__elf_seg_B:
+func_code_start__Z11call_nestedi:
+  .cv_func_id 0
+.seh_proc _Z11call_nestedi
+  .cv_loc 0 1 20 0
+.byte 0x55
+.seh_pushreg rbp
+.byte 0x48
+.byte 0x89
+.byte 0xe5
+.seh_setframe rbp, 0
+.seh_endprologue
+.byte 0x89
+.byte 0x7d
+.byte 0xdc
+  .cv_loc 0 1 21 25
+.byte 0x8b
+.byte 0x45
+.byte 0xdc
+.byte 0x89
+.byte 0x45
+.byte 0xec
+.byte 0xc7
+.byte 0x45
+.byte 0xe8
+.byte 0x0a
+.byte 0x00
+.byte 0x00
+.byte 0x00
+  .cv_loc 0 1 14 15
+.byte 0x8b
+.byte 0x45
+.byte 0xec
+  .cv_loc 0 1 14 17
+.byte 0x03
+.byte 0x45
+.byte 0xe8
+  .cv_loc 0 1 14 9
+.byte 0x89
+.byte 0x45
+.byte 0xe4
+  .cv_loc 0 1 15 28
+.byte 0x8b
+.byte 0x45
+.byte 0xe4
+.byte 0x89
+.byte 0x45
+.byte 0xf8
+  .cv_loc 0 1 3 21
+.byte 0x8b
+.byte 0x45
+.byte 0xf8
+  .cv_loc 0 1 3 23
+.byte 0x83
+.byte 0xc0
+.byte 0x05
+  .cv_loc 0 1 3 9
+.byte 0x89
+.byte 0x45
+.byte 0xf4
+  .cv_loc 0 1 4 19
+.byte 0x83
+.byte 0x7d
+.byte 0xf4
+.byte 0x0a
+  .cv_loc 0 1 4 9
+.byte 0x7e
+.byte 0x10
+  .cv_loc 0 1 6 27
+.byte 0x8b
+.byte 0x45
+.byte 0xf4
+  .cv_loc 0 1 6 37
+.byte 0xd1
+.byte 0xe0
+  .cv_loc 0 1 6 13
+.byte 0x89
+.byte 0x45
+.byte 0xf0
+  .cv_loc 0 1 7 16
+.byte 0x8b
+.byte 0x45
+.byte 0xf0
+  .cv_loc 0 1 7 9
+.byte 0x89
+.byte 0x45
+.byte 0xfc
+.byte 0xeb
+.byte 0x06
+  .cv_loc 0 1 9 12
+.byte 0x8b
+.byte 0x45
+.byte 0xf4
+  .cv_loc 0 1 9 5
+.byte 0x89
+.byte 0x45
+.byte 0xfc
+  .cv_loc 0 1 10 1
+.byte 0x8b
+.byte 0x45
+.byte 0xfc
+  .cv_loc 0 1 15 9
+.byte 0x89
+.byte 0x45
+.byte 0xe0
+  .cv_loc 0 1 16 12
+.byte 0x8b
+.byte 0x45
+.byte 0xe0
+  .cv_loc 0 1 21 5
+.byte 0x5d
+.byte 0xc3
+.seh_endproc
+func_code_end__Z11call_nestedi:
+.org __elf_base + 9080
+__elf_seg_C:
+.byte 0x06
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x60
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x0b
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x18
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x05
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xb0
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x0a
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x12
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0xf5
+.byte 0xfe
+.byte 0xff
+.byte 0x6f
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x90
+.byte 0x02
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.org __elf_seg_C + 3208
+# --- REPEAT: ELF Exported Symbols ---
+cv_nested_inlines.cpp = __elf_seg_A + 0
+_DYNAMIC = __elf_seg_C + 0
+.def _Z11call_nestedi; .scl 2; .type 32; .endef
+.globl _Z11call_nestedi
+_Z11call_nestedi = __elf_seg_B + 0
+
+# --- REPEAT: CodeView Symbol Table (.debug$S) ---
+.section .debug$S,"r"
+  .long 4 # CodeView signature
+  .long 0xf1 # Symbols subsection kind
+  .long .Lsym_end - .Lsym_begin # length of subsection
+.Lsym_begin:
+  # Symbol Record: Kind=4412, Length=36
+  .byte 34
+  .byte 0
+  .byte 60
+  .byte 17
+  .byte 7
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 208
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 82
+  .byte 69
+  .byte 80
+  .byte 69
+  .byte 65
+  .byte 84
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .p2align 2, 0
+  .p2align 2, 0
+  # Function Symbol: _Z11call_nestedi
+.Lfunc_sym_begin__Z11call_nestedi:
+  .short .Lfunc_sym_end__Z11call_nestedi - .Lfunc_sym_begin__Z11call_nestedi - 2
+  .short 0x1147 # S_GPROC32_ID
+  .long 0 # Parent
+  .long .Lfunc_scope_end__Z11call_nestedi - .Lsym_begin # End offset
+  .long 0 # Next
+  .long 83 # CodeSize
+  .long 4 # DbgStart
+  .long 0 # DbgEnd
+  .long 4098 # FunctionType
+  .secrel32 _Z11call_nestedi # CodeOffset
+  .secidx _Z11call_nestedi # Segment
+  .byte 0 # Flags
+  .asciz "_Z11call_nestedi"
+  .p2align 2, 0
+.Lfunc_sym_end__Z11call_nestedi:
+  # Frame Procedure Symbol
+.Lframe_proc_begin__Z11call_nestedi:
+  .short .Lframe_proc_end__Z11call_nestedi - .Lframe_proc_begin__Z11call_nestedi - 2
+  .short 0x1012 # S_FRAMEPROC
+  .long 8 # TotalFrameBytes
+  .long 0 # PaddingFrameBytes
+  .long 0 # OffsetToPadding
+  .long 0 # BytesOfCalleeSavedRegisters
+  .long 0 # OffsetOfExceptionHandler
+  .short 0 # SectionIdOfExceptionHandler
+  .long 0x28000 # Flags
+  .p2align 2, 0
+.Lframe_proc_end__Z11call_nestedi:
+  # Local Variable: a
+  # Symbol Record: Kind=4414, Length=12
+  .byte 10
+  .byte 0
+  .byte 62
+  .byte 17
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 0
+  .byte 97
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -36 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Inline Site Symbol: outer_inline
+.Linline_site_begin_1:
+  .short 38
+  .short 0x114d # S_INLINESITE
+  .long 0 # Parent
+  .long .Linline_site_scope_end_1 - .Lsym_begin # End offset
+  .long 4101 # Inlinee Type Index
+  .byte 6
+  .byte 15
+  .byte 11
+  .byte 41
+  .byte 6
+  .byte 25
+  .byte 3
+  .byte 6
+  .byte 11
+  .byte 41
+  .byte 11
+  .byte 70
+  .byte 11
+  .byte 40
+  .byte 11
+  .byte 72
+  .byte 11
+  .byte 38
+  .byte 6
+  .byte 10
+  .byte 3
+  .byte 3
+  .byte 11
+  .byte 35
+  .byte 4
+  .byte 3
+  .p2align 2, 0
+.Linline_site_end_1:
+  # Local Variable: x
+  # Symbol Record: Kind=4414, Length=12
+  .byte 10
+  .byte 0
+  .byte 62
+  .byte 17
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 0
+  .byte 120
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -20 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Local Variable: y
+  # Symbol Record: Kind=4414, Length=12
+  .byte 10
+  .byte 0
+  .byte 62
+  .byte 17
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 0
+  .byte 121
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -24 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Symbol Record: Kind=4363, Length=16
+  .byte 14
+  .byte 0
+  .byte 11
+  .byte 17
+  .byte 228
+  .byte 255
+  .byte 255
+  .byte 255
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 115
+  .byte 117
+  .byte 109
+  .byte 0
+  # Symbol Record: Kind=4363, Length=16
+  .byte 14
+  .byte 0
+  .byte 11
+  .byte 17
+  .byte 224
+  .byte 255
+  .byte 255
+  .byte 255
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 114
+  .byte 101
+  .byte 115
+  .byte 0
+  # Inline Site Symbol: inner_inline
+.Linline_site_begin_2:
+  .short 26
+  .short 0x114d # S_INLINESITE
+  .long 0 # Parent
+  .long .Linline_site_scope_end_2 - .Lsym_begin # End offset
+  .long 4102 # Inlinee Type Index
+  .byte 6
+  .byte 25
+  .byte 11
+  .byte 41
+  .byte 11
+  .byte 70
+  .byte 11
+  .byte 40
+  .byte 11
+  .byte 72
+  .byte 11
+  .byte 38
+  .byte 4
+  .byte 3
+  .p2align 2, 0
+.Linline_site_end_2:
+  # Local Variable: z
+  # Symbol Record: Kind=4414, Length=12
+  .byte 10
+  .byte 0
+  .byte 62
+  .byte 17
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 0
+  .byte 122
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -8 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Symbol Record: Kind=4363, Length=24
+  .byte 22
+  .byte 0
+  .byte 11
+  .byte 17
+  .byte 244
+  .byte 255
+  .byte 255
+  .byte 255
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 105
+  .byte 110
+  .byte 110
+  .byte 101
+  .byte 114
+  .byte 95
+  .byte 118
+  .byte 97
+  .byte 108
+  .byte 0
+  .byte 0
+  .byte 0
+  # Symbol Record: Kind=4363, Length=24
+  .byte 22
+  .byte 0
+  .byte 11
+  .byte 17
+  .byte 240
+  .byte 255
+  .byte 255
+  .byte 255
+  .byte 3
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 108
+  .byte 101
+  .byte 120
+  .byte 105
+  .byte 99
+  .byte 97
+  .byte 108
+  .byte 95
+  .byte 118
+  .byte 97
+  .byte 108
+  .byte 0
+  .short 2
+  .short 6 # S_END
+  .p2align 2, 0
+.Linline_site_scope_end_2:
+  .short 2
+  .short 6 # S_END
+  .p2align 2, 0
+.Linline_site_scope_end_1:
+  .p2align 2, 0
+  .short 2
+  .short 6 # S_END
+  .p2align 2, 0
+.Lfunc_scope_end__Z11call_nestedi:
+.Lsym_end:
+  .cv_linetable 0, func_code_start__Z11call_nestedi, func_code_end__Z11call_nestedi
+  .cv_filechecksums
+  .cv_stringtable
+
+# --- REPEAT: CodeView Type Table (.debug$T) ---
+.section .debug$T,"r"
+  .long 4 # CodeView signature
+  # TypeIndex=4096, Length=12, Leaf=4609
+  .byte 10
+  .byte 0
+  .byte 1
+  .byte 18
+  .byte 1
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  # TypeIndex=4097, Length=16, Leaf=4104
+  .byte 14
+  .byte 0
+  .byte 8
+  .byte 16
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 0
+  .byte 0
+  .byte 16
+  .byte 0
+  .byte 0
+  # TypeIndex=4098, Length=24, Leaf=5633
+  .byte 22
+  .byte 0
+  .byte 1
+  .byte 22
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 16
+  .byte 0
+  .byte 0
+  .byte 99
+  .byte 97
+  .byte 108
+  .byte 108
+  .byte 95
+  .byte 110
+  .byte 101
+  .byte 115
+  .byte 116
+  .byte 101
+  .byte 100
+  .byte 0
+  # TypeIndex=4099, Length=16, Leaf=4609
+  .byte 14
+  .byte 0
+  .byte 1
+  .byte 18
+  .byte 2
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  # TypeIndex=4100, Length=16, Leaf=4104
+  .byte 14
+  .byte 0
+  .byte 8
+  .byte 16
+  .byte 116
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 2
+  .byte 0
+  .byte 3
+  .byte 16
+  .byte 0
+  .byte 0
+  # TypeIndex=4101, Length=28, Leaf=5633
+  .byte 26
+  .byte 0
+  .byte 1
+  .byte 22
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 4
+  .byte 16
+  .byte 0
+  .byte 0
+  .byte 111
+  .byte 117
+  .byte 116
+  .byte 101
+  .byte 114
+  .byte 95
+  .byte 105
+  .byte 110
+  .byte 108
+  .byte 105
+  .byte 110
+  .byte 101
+  .byte 0
+  .byte 243
+  .byte 242
+  .byte 241
+  # TypeIndex=4102, Length=28, Leaf=5633
+  .byte 26
+  .byte 0
+  .byte 1
+  .byte 22
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 1
+  .byte 16
+  .byte 0
+  .byte 0
+  .byte 105
+  .byte 110
+  .byte 110
+  .byte 101
+  .byte 114
+  .byte 95
+  .byte 105
+  .byte 110
+  .byte 108
+  .byte 105
+  .byte 110
+  .byte 101
+  .byte 0
+  .byte 243
+  .byte 242
+  .byte 241

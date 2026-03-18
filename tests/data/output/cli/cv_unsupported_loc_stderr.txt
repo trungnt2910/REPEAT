@@ -1,0 +1,2 @@
+warning: unsupported DWARF location expression for variable 'a' in range [0x135a, 0x1372), omitting range
+warning: unsupported DWARF location expression for variable 'b' in range [0x1362, 0x1372), omitting range

@@ -1,0 +1,51 @@
+name: Build (Linux)
+
+on:
+  push:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake clang ninja-build zlib1g-dev libzstd-dev
+
+    - name: Configure
+      run: |
+        cmake                                             \
+          -S .                                            \
+          -B build_${{ matrix.configuration }}            \
+          -G Ninja                                        \
+          -DCMAKE_BUILD_TYPE=${{ matrix.configuration }}  \
+          -DCMAKE_C_COMPILER=clang                        \
+          -DCMAKE_CXX_COMPILER=clang++
+
+    - name: Build
+      run: |
+        cmake                                         \
+          --build build_${{ matrix.configuration }}   \
+          --config ${{ matrix.configuration }}
+
+    - name: Run Tests
+      run: |
+        ctest                                           \
+          --output-on-failure                           \
+          --test-dir build_${{ matrix.configuration }}  \
+          --build-config ${{ matrix.configuration }}
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: repeat-linux-${{ matrix.configuration }}
+        path: build_${{ matrix.configuration }}/src/repeat
