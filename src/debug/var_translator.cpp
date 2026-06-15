@@ -346,29 +346,6 @@ try_parse_stack_offset_expr(const llvm::DWARFLocationExpression& loc_expr,
     return std::nullopt;
 }
 
-static std::optional<int32_t>
-try_parse_stack_offset(const llvm::DWARFDie& die, uint64_t func_start, DebugTranslationContext& ctx)
-{
-    auto loc_opt = die.find(llvm::dwarf::DW_AT_location);
-    if (!loc_opt)
-    {
-        return std::nullopt;
-    }
-
-    auto expr_or_err = die.getLocations(llvm::dwarf::DW_AT_location);
-    if (!expr_or_err || expr_or_err->empty())
-    {
-        return std::nullopt;
-    }
-
-    const auto& loc_expr = (*expr_or_err)[0];
-    if (loc_expr.Range || expr_or_err->size() > 1)
-    {
-        return std::nullopt;
-    }
-    return try_parse_stack_offset_expr(loc_expr, die, func_start, ctx);
-}
-
 static std::optional<llvm::codeview::RegisterId>
 try_parse_register_expr(const llvm::DWARFLocationExpression& loc_expr, DebugTranslationContext& ctx)
 {
@@ -449,29 +426,6 @@ try_parse_register_rel_expr(const llvm::DWARFLocationExpression& loc_expr,
         return RegisterRelOffset{reg, static_cast<int32_t>(offset)};
     }
     return std::nullopt;
-}
-
-static std::optional<llvm::codeview::RegisterId> try_parse_register(const llvm::DWARFDie& die,
-                                                                    DebugTranslationContext& ctx)
-{
-    auto loc_opt = die.find(llvm::dwarf::DW_AT_location);
-    if (!loc_opt)
-    {
-        return std::nullopt;
-    }
-
-    auto expr_or_err = die.getLocations(llvm::dwarf::DW_AT_location);
-    if (!expr_or_err || expr_or_err->empty())
-    {
-        return std::nullopt;
-    }
-
-    const auto& loc_expr = (*expr_or_err)[0];
-    if (loc_expr.Range || expr_or_err->size() > 1)
-    {
-        return std::nullopt;
-    }
-    return try_parse_register_expr(loc_expr, ctx);
 }
 
 void VarTranslator::TranslateGlobalVars(DebugTranslationContext& ctx, llvm::raw_ostream& os)
@@ -893,166 +847,123 @@ static void translate_block_variables(const llvm::DWARFDie& block_die,
             llvm::DWARFDie type_die = child.resolveReferencedType(llvm::dwarf::DW_AT_type);
             llvm::codeview::TypeIndex type_idx = TypeTranslator::TranslateType(type_die, ctx);
 
-            bool force_local_sym = (tag == llvm::dwarf::DW_TAG_formal_parameter);
-            bool parsed_simple = false;
-
-            if (!force_local_sym)
+            auto expr_or_err = child.getLocations(llvm::dwarf::DW_AT_location);
+            if (expr_or_err && !expr_or_err->empty())
             {
-                if (auto stack_offset = try_parse_stack_offset(child, func_start, ctx))
+                llvm::codeview::LocalSymFlags flags = llvm::codeview::LocalSymFlags::None;
+                if (tag == llvm::dwarf::DW_TAG_formal_parameter)
                 {
-                    llvm::codeview::BPRelativeSym bp_sym(
-                        llvm::codeview::SymbolRecordKind::BPRelativeSym);
-                    bp_sym.Offset = *stack_offset;
-                    bp_sym.Type = type_idx;
-                    bp_sym.Name = var_name;
-
-                    llvm::codeview::CVSymbol cvs = llvm::codeview::SymbolSerializer::writeOneSymbol(
-                        bp_sym,
-                        ctx.m_typeBuilderAllocator,
-                        llvm::codeview::CodeViewContainer::ObjectFile);
-                    DebugHelper::EmitSymbolBytesToAssembly(os, cvs);
-                    parsed_simple = true;
+                    flags |= llvm::codeview::LocalSymFlags::IsParameter;
                 }
-                else if (auto reg = try_parse_register(child, ctx))
-                {
-                    llvm::codeview::RegisterSym reg_sym(
-                        llvm::codeview::SymbolRecordKind::RegisterSym);
-                    reg_sym.Index = type_idx;
-                    reg_sym.Register = *reg;
-                    reg_sym.Name = var_name;
+                llvm::codeview::LocalSym local_sym(llvm::codeview::SymbolRecordKind::LocalSym);
+                local_sym.Type = type_idx;
+                local_sym.Flags = flags;
+                local_sym.Name = var_name;
 
-                    llvm::codeview::CVSymbol cvs = llvm::codeview::SymbolSerializer::writeOneSymbol(
-                        reg_sym,
-                        ctx.m_typeBuilderAllocator,
-                        llvm::codeview::CodeViewContainer::ObjectFile);
-                    DebugHelper::EmitSymbolBytesToAssembly(os, cvs);
-                    parsed_simple = true;
-                }
-            }
+                llvm::codeview::CVSymbol cvs = llvm::codeview::SymbolSerializer::writeOneSymbol(
+                    local_sym,
+                    ctx.m_typeBuilderAllocator,
+                    llvm::codeview::CodeViewContainer::ObjectFile);
 
-            if (!parsed_simple)
-            {
-                auto expr_or_err = child.getLocations(llvm::dwarf::DW_AT_location);
-                if (expr_or_err && !expr_or_err->empty())
+                os << "  # Local Variable: " << var_name << "\n";
+                DebugHelper::EmitSymbolBytesToAssembly(os, cvs);
+
+                for (const auto& loc_expr : *expr_or_err)
                 {
-                    llvm::codeview::LocalSymFlags flags = llvm::codeview::LocalSymFlags::None;
-                    if (tag == llvm::dwarf::DW_TAG_formal_parameter)
+                    uint64_t low_pc = loc_expr.Range ? loc_expr.Range->LowPC : func_start;
+                    uint64_t high_pc =
+                        loc_expr.Range ? loc_expr.Range->HighPC : (func_start + func_size);
+
+                    if (low_pc < func_start)
                     {
-                        flags |= llvm::codeview::LocalSymFlags::IsParameter;
+                        ctx.m_warningStream
+                            << "warning: location range starts before function for variable '"
+                            << var_name << "' ignored\n";
+                        continue;
                     }
-                    llvm::codeview::LocalSym local_sym(llvm::codeview::SymbolRecordKind::LocalSym);
-                    local_sym.Type = type_idx;
-                    local_sym.Flags = flags;
-                    local_sym.Name = var_name;
 
-                    llvm::codeview::CVSymbol cvs = llvm::codeview::SymbolSerializer::writeOneSymbol(
-                        local_sym,
-                        ctx.m_typeBuilderAllocator,
-                        llvm::codeview::CodeViewContainer::ObjectFile);
+                    uint64_t start_offset = low_pc - func_start;
+                    uint64_t range_len = high_pc - low_pc;
 
-                    os << "  # Local Variable: " << var_name << "\n";
-                    DebugHelper::EmitSymbolBytesToAssembly(os, cvs);
-
-                    for (const auto& loc_expr : *expr_or_err)
+                    if (func_name.empty())
                     {
-                        uint64_t low_pc = loc_expr.Range ? loc_expr.Range->LowPC : func_start;
-                        uint64_t high_pc =
-                            loc_expr.Range ? loc_expr.Range->HighPC : (func_start + func_size);
+                        ctx.m_warningStream
+                            << "warning: missing function name for relocation of variable '"
+                            << var_name << "', omitting range\n";
+                        continue;
+                    }
 
-                        if (low_pc < func_start)
+                    if (auto reg = try_parse_register_expr(loc_expr, ctx))
+                    {
+                        uint16_t reg_id = static_cast<uint16_t>(*reg);
+                        uint64_t current_offset = start_offset;
+                        uint64_t remaining_len = range_len;
+                        while (remaining_len > 0)
                         {
-                            ctx.m_warningStream
-                                << "warning: location range starts before function for variable '"
-                                << var_name << "' ignored\n";
-                            continue;
+                            uint16_t current_len =
+                                std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
+                            os << "  .short 14\n";
+                            os << "  .short 0x1141 # S_DEFRANGE_REGISTER\n";
+                            os << "  .short " << reg_id << " # Register\n";
+                            os << "  .short 0 # Flags\n";
+                            os << "  .secrel32 " << func_name << " + " << current_offset << "\n";
+                            os << "  .secidx " << func_name << "\n";
+                            os << "  .short " << current_len << "\n";
+
+                            current_offset += current_len;
+                            remaining_len -= current_len;
                         }
-
-                        uint64_t start_offset = low_pc - func_start;
-                        uint64_t range_len = high_pc - low_pc;
-
-                        if (func_name.empty())
+                    }
+                    else if (auto stack_offset =
+                                 try_parse_stack_offset_expr(loc_expr, child, func_start, ctx))
+                    {
+                        int32_t offset = *stack_offset;
+                        uint64_t current_offset = start_offset;
+                        uint64_t remaining_len = range_len;
+                        while (remaining_len > 0)
                         {
-                            ctx.m_warningStream
-                                << "warning: missing function name for relocation of variable '"
-                                << var_name << "', omitting range\n";
-                            continue;
-                        }
+                            uint16_t current_len =
+                                std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
+                            os << "  .short 14\n";
+                            os << "  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL\n";
+                            os << "  .long " << offset << " # Offset\n";
+                            os << "  .secrel32 " << func_name << " + " << current_offset << "\n";
+                            os << "  .secidx " << func_name << "\n";
+                            os << "  .short " << current_len << "\n";
 
-                        if (auto reg = try_parse_register_expr(loc_expr, ctx))
+                            current_offset += current_len;
+                            remaining_len -= current_len;
+                        }
+                    }
+                    else if (auto reg_rel = try_parse_register_rel_expr(loc_expr, ctx))
+                    {
+                        uint16_t reg_id = static_cast<uint16_t>(reg_rel->reg);
+                        int32_t offset = reg_rel->offset;
+                        uint64_t current_offset = start_offset;
+                        uint64_t remaining_len = range_len;
+                        while (remaining_len > 0)
                         {
-                            uint16_t reg_id = static_cast<uint16_t>(*reg);
-                            uint64_t current_offset = start_offset;
-                            uint64_t remaining_len = range_len;
-                            while (remaining_len > 0)
-                            {
-                                uint16_t current_len =
-                                    std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
-                                os << "  .short 14\n";
-                                os << "  .short 0x1141 # S_DEFRANGE_REGISTER\n";
-                                os << "  .short " << reg_id << " # Register\n";
-                                os << "  .short 0 # Flags\n";
-                                os << "  .secrel32 " << func_name << " + " << current_offset
-                                   << "\n";
-                                os << "  .secidx " << func_name << "\n";
-                                os << "  .short " << current_len << "\n";
+                            uint16_t current_len =
+                                std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
+                            os << "  .short 18\n";
+                            os << "  .short 0x1145 # S_DEFRANGE_REGISTER_REL\n";
+                            os << "  .short " << reg_id << " # Register\n";
+                            os << "  .short 0 # Flags\n";
+                            os << "  .long " << offset << " # Offset\n";
+                            os << "  .secrel32 " << func_name << " + " << current_offset << "\n";
+                            os << "  .secidx " << func_name << "\n";
+                            os << "  .short " << current_len << "\n";
 
-                                current_offset += current_len;
-                                remaining_len -= current_len;
-                            }
+                            current_offset += current_len;
+                            remaining_len -= current_len;
                         }
-                        else if (auto stack_offset =
-                                     try_parse_stack_offset_expr(loc_expr, child, func_start, ctx))
-                        {
-                            int32_t offset = *stack_offset;
-                            uint64_t current_offset = start_offset;
-                            uint64_t remaining_len = range_len;
-                            while (remaining_len > 0)
-                            {
-                                uint16_t current_len =
-                                    std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
-                                os << "  .short 14\n";
-                                os << "  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL\n";
-                                os << "  .long " << offset << " # Offset\n";
-                                os << "  .secrel32 " << func_name << " + " << current_offset
-                                   << "\n";
-                                os << "  .secidx " << func_name << "\n";
-                                os << "  .short " << current_len << "\n";
-
-                                current_offset += current_len;
-                                remaining_len -= current_len;
-                            }
-                        }
-                        else if (auto reg_rel = try_parse_register_rel_expr(loc_expr, ctx))
-                        {
-                            uint16_t reg_id = static_cast<uint16_t>(reg_rel->reg);
-                            int32_t offset = reg_rel->offset;
-                            uint64_t current_offset = start_offset;
-                            uint64_t remaining_len = range_len;
-                            while (remaining_len > 0)
-                            {
-                                uint16_t current_len =
-                                    std::min(remaining_len, (uint64_t)llvm::codeview::MaxDefRange);
-                                os << "  .short 18\n";
-                                os << "  .short 0x1145 # S_DEFRANGE_REGISTER_REL\n";
-                                os << "  .short " << reg_id << " # Register\n";
-                                os << "  .short 0 # Flags\n";
-                                os << "  .long " << offset << " # Offset\n";
-                                os << "  .secrel32 " << func_name << " + " << current_offset
-                                   << "\n";
-                                os << "  .secidx " << func_name << "\n";
-                                os << "  .short " << current_len << "\n";
-
-                                current_offset += current_len;
-                                remaining_len -= current_len;
-                            }
-                        }
-                        else
-                        {
-                            ctx.m_warningStream
-                                << "warning: unsupported DWARF location expression for variable '"
-                                << var_name << "' in range [" << llvm::formatv("{0:x}", low_pc)
-                                << ", " << llvm::formatv("{0:x}", high_pc) << "), omitting range\n";
-                        }
+                    }
+                    else
+                    {
+                        ctx.m_warningStream
+                            << "warning: unsupported DWARF location expression for variable '"
+                            << var_name << "' in range [" << llvm::formatv("{0:x}", low_pc) << ", "
+                            << llvm::formatv("{0:x}", high_pc) << "), omitting range\n";
                     }
                 }
             }

@@ -956,16 +956,15 @@ call_add = __elf_seg_B + 0
   .secrel32 call_add + 0
   .secidx call_add
   .short 34
-  # Symbol Record: Kind=4363, Length=16
+  # Local Variable: sum
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 244
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 3
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -973,6 +972,14 @@ call_add = __elf_seg_B + 0
   .byte 117
   .byte 109
   .byte 0
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -12 # Offset
+  .secrel32 call_add + 0
+  .secidx call_add
+  .short 34
   .short 2
   .short 6 # S_END
   .p2align 2, 0

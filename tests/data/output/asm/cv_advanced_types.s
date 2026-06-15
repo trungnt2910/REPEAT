@@ -2267,33 +2267,39 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .long 0x28000 # Flags
   .p2align 2, 0
 .Lframe_proc_end__Z4mainv:
-  # Symbol Record: Kind=4363, Length=16
+  # Local Variable: obj
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 192
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 14
   .byte 16
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 111
   .byte 98
   .byte 106
   .byte 0
-  # Symbol Record: Kind=4363, Length=16
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -64 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: val
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 188
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2301,17 +2307,24 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 97
   .byte 108
   .byte 0
-  # Symbol Record: Kind=4363, Length=24
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -68 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: use_extern
+  # Symbol Record: Kind=4414, Length=24
   .byte 22
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 184
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 15
   .byte 16
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 117
@@ -2326,33 +2339,47 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 110
   .byte 0
   .byte 0
-  # Symbol Record: Kind=4363, Length=16
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -72 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: str
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 172
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 18
   .byte 16
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 115
   .byte 116
   .byte 114
   .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
   .byte 0
-  .byte 11
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -84 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_rax
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
+  .byte 0
+  .byte 62
   .byte 17
-  .byte 168
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2362,18 +2389,21 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 97
   .byte 120
   .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -88 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_rbx
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
   .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
-  .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 164
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2383,18 +2413,21 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 98
   .byte 120
   .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -92 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_rcx
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
   .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
-  .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 160
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2404,18 +2437,21 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 99
   .byte 120
   .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -96 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_rdx
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
   .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
-  .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 156
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2425,18 +2461,21 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 100
   .byte 120
   .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -100 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_rsi
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
   .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
-  .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 152
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2446,18 +2485,21 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 115
   .byte 105
   .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -104 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
+  # Local Variable: r_r8
+  # Symbol Record: Kind=4414, Length=16
+  .byte 14
   .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=20
-  .byte 18
-  .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 148
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -2467,8 +2509,12 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 56
   .byte 0
   .byte 0
-  .byte 0
-  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -108 # Offset
+  .secrel32 _Z4mainv + 0
+  .secidx _Z4mainv
+  .short 599
   # Inline Site Symbol: my_inlined_helper
 .Linline_site_begin_1:
   .short 21
@@ -2691,23 +2737,30 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .secrel32 _ZL24test_parameter_registersiiiiii.5776 + 0
   .secidx _ZL24test_parameter_registersiiiiii.5776
   .short 50
-  # Symbol Record: Kind=4363, Length=16
+  # Local Variable: sum
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 228
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 15
   .byte 16
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 115
   .byte 117
   .byte 109
   .byte 0
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -28 # Offset
+  .secrel32 _ZL24test_parameter_registersiiiiii.5776 + 0
+  .secidx _ZL24test_parameter_registersiiiiii.5776
+  .short 50
   .p2align 2, 0
 .Lfunc_scope_end_record__ZL24test_parameter_registersiiiiii.5776:
   .short 2

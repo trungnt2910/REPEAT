@@ -872,17 +872,16 @@ _Z9call_anonv = __elf_seg_B + 0
   .long 0x28000 # Flags
   .p2align 2, 0
 .Lframe_proc_end__Z9call_anonv:
-  # Symbol Record: Kind=4363, Length=24
-  .byte 22
+  # Local Variable: local_var
+  # Symbol Record: Kind=4414, Length=20
+  .byte 18
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 252
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 5
   .byte 16
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 108
@@ -895,8 +894,12 @@ _Z9call_anonv = __elf_seg_B + 0
   .byte 97
   .byte 114
   .byte 0
-  .byte 0
-  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -4 # Offset
+  .secrel32 _Z9call_anonv + 0
+  .secidx _Z9call_anonv
+  .short 18
   .p2align 2, 0
 .Lfunc_scope_end_record__Z9call_anonv:
   .short 2

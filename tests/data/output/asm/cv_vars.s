@@ -912,16 +912,15 @@ test_func = __elf_seg_B + 0
   .secrel32 test_func + 0
   .secidx test_func
   .short 33
-  # Symbol Record: Kind=4363, Length=24
+  # Local Variable: local_stack
+  # Symbol Record: Kind=4414, Length=24
   .byte 22
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 248
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -937,16 +936,23 @@ test_func = __elf_seg_B + 0
   .byte 99
   .byte 107
   .byte 0
-  # Symbol Record: Kind=4363, Length=24
-  .byte 22
   .byte 0
-  .byte 11
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -8 # Offset
+  .secrel32 test_func + 0
+  .secidx test_func
+  .short 33
+  # Local Variable: local_reg
+  # Symbol Record: Kind=4414, Length=20
+  .byte 18
+  .byte 0
+  .byte 62
   .byte 17
-  .byte 244
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 116
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -960,8 +966,12 @@ test_func = __elf_seg_B + 0
   .byte 101
   .byte 103
   .byte 0
-  .byte 0
-  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -12 # Offset
+  .secrel32 test_func + 0
+  .secidx test_func
+  .short 33
   .p2align 2, 0
 .Lfunc_scope_end_record_test_func:
   .short 2

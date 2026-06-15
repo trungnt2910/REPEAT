@@ -1186,16 +1186,15 @@ _Z11call_nestedi = __elf_seg_B + 0
   .secrel32 _Z11call_nestedi + 0
   .secidx _Z11call_nestedi
   .short 83
-  # Symbol Record: Kind=4363, Length=16
+  # Local Variable: sum
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 228
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 3
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -1203,16 +1202,23 @@ _Z11call_nestedi = __elf_seg_B + 0
   .byte 117
   .byte 109
   .byte 0
-  # Symbol Record: Kind=4363, Length=16
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -28 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Local Variable: res
+  # Symbol Record: Kind=4414, Length=16
   .byte 14
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 224
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 3
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -1220,6 +1226,14 @@ _Z11call_nestedi = __elf_seg_B + 0
   .byte 101
   .byte 115
   .byte 0
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -32 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
   # Inline Site Symbol: inner_inline
 .Linline_site_begin_2:
   .short 26
@@ -1263,16 +1277,15 @@ _Z11call_nestedi = __elf_seg_B + 0
   .secrel32 _Z11call_nestedi + 0
   .secidx _Z11call_nestedi
   .short 83
-  # Symbol Record: Kind=4363, Length=24
-  .byte 22
+  # Local Variable: inner_val
+  # Symbol Record: Kind=4414, Length=20
+  .byte 18
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 244
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 3
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -1286,18 +1299,21 @@ _Z11call_nestedi = __elf_seg_B + 0
   .byte 97
   .byte 108
   .byte 0
-  .byte 0
-  .byte 0
-  # Symbol Record: Kind=4363, Length=24
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -12 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
+  # Local Variable: lexical_val
+  # Symbol Record: Kind=4414, Length=24
   .byte 22
   .byte 0
-  .byte 11
+  .byte 62
   .byte 17
-  .byte 240
-  .byte 255
-  .byte 255
-  .byte 255
   .byte 3
+  .byte 0
+  .byte 0
   .byte 0
   .byte 0
   .byte 0
@@ -1313,6 +1329,14 @@ _Z11call_nestedi = __elf_seg_B + 0
   .byte 97
   .byte 108
   .byte 0
+  .byte 0
+  .byte 0
+  .short 14
+  .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
+  .long -16 # Offset
+  .secrel32 _Z11call_nestedi + 0
+  .secidx _Z11call_nestedi
+  .short 83
   .short 2
   .short 6 # S_END
   .p2align 2, 0

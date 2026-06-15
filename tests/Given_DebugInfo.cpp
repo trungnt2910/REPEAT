@@ -29,17 +29,6 @@ static std::string ToByteSequence(const std::string& str, bool null_terminate = 
     return result;
 }
 
-static std::string IntToByteSequence(int32_t val)
-{
-    std::string result;
-    uint32_t uval = static_cast<uint32_t>(val);
-    result += "  .byte " + std::to_string(uval & 0xff) + "\n";
-    result += "  .byte " + std::to_string((uval >> 8) & 0xff) + "\n";
-    result += "  .byte " + std::to_string((uval >> 16) & 0xff) + "\n";
-    result += "  .byte " + std::to_string((uval >> 24) & 0xff) + "\n";
-    return result;
-}
-
 class Given_DebugInfo : public RepeatTest
 {
 };
@@ -332,10 +321,12 @@ TEST_F(Given_DebugInfo, When_TranslatingLocalVariables_EmitsParameterSymbolRecor
     translator.Translate(os);
     os.flush();
 
-    EXPECT_NE(asm_output.find("Symbol Record: Kind=4363"), std::string::npos)
-        << "Missing Bp-relative symbol record";
+    EXPECT_NE(asm_output.find("Symbol Record: Kind=4414"), std::string::npos)
+        << "Missing S_LOCAL symbol record";
     EXPECT_NE(asm_output.find(ToByteSequence("param_a")), std::string::npos)
         << "Missing 'param_a' symbol record";
+    EXPECT_NE(asm_output.find(".short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL"), std::string::npos)
+        << "Missing S_DEFRANGE_FRAMEPOINTER_REL for param_a";
     EXPECT_NE(asm_output.find("  .long -4 # Offset"), std::string::npos)
         << "Incorrect offset for param_a (expected -4)";
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_vars.s");
@@ -354,12 +345,13 @@ TEST_F(Given_DebugInfo, When_TranslatingLocalVariables_EmitsStackLocalSymbolReco
     translator.Translate(os);
     os.flush();
 
-    EXPECT_NE(asm_output.find("Symbol Record: Kind=4363"), std::string::npos)
-        << "Missing Bp-relative symbol record";
+    EXPECT_NE(asm_output.find("Symbol Record: Kind=4414"), std::string::npos)
+        << "Missing S_LOCAL symbol record";
     EXPECT_NE(asm_output.find(ToByteSequence("local_stack")), std::string::npos)
         << "Missing 'local_stack' symbol record";
-    std::string expected_bprel_neg8 = "  .byte 11\n  .byte 17\n" + IntToByteSequence(-8);
-    EXPECT_NE(asm_output.find(expected_bprel_neg8), std::string::npos)
+    EXPECT_NE(asm_output.find(".short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL"), std::string::npos)
+        << "Missing S_DEFRANGE_FRAMEPOINTER_REL for local_stack";
+    EXPECT_NE(asm_output.find("  .long -8 # Offset"), std::string::npos)
         << "Incorrect offset for local_stack (expected -8)";
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_vars.s");
 }
@@ -377,10 +369,12 @@ TEST_F(Given_DebugInfo, When_TranslatingLocalVariables_EmitsRegisterLocalSymbolR
     translator.Translate(os);
     os.flush();
 
-    EXPECT_NE(asm_output.find("Symbol Record: Kind=4363"), std::string::npos)
-        << "Missing Bp-relative symbol record";
+    EXPECT_NE(asm_output.find("Symbol Record: Kind=4414"), std::string::npos)
+        << "Missing S_LOCAL symbol record";
     EXPECT_NE(asm_output.find(ToByteSequence("local_reg")), std::string::npos)
         << "Missing 'local_reg' symbol record";
+    EXPECT_NE(asm_output.find(".short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL"), std::string::npos)
+        << "Missing S_DEFRANGE_FRAMEPOINTER_REL for local_reg";
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_vars.s");
 }
 
