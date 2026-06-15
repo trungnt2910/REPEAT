@@ -48,6 +48,40 @@ static std::string get_qualified_name(const llvm::DWARFDie& die)
     return result;
 }
 
+static llvm::codeview::TypeIndex translate_procedure_type(const llvm::DWARFDie& die,
+                                                          DebugTranslationContext& ctx)
+{
+    llvm::codeview::TypeIndex ret_idx = llvm::codeview::TypeIndex::Void();
+    auto type_opt = die.find(llvm::dwarf::DW_AT_type);
+    if (type_opt)
+    {
+        llvm::DWARFDie ret_type_die = die.resolveReferencedType(llvm::dwarf::DW_AT_type);
+        ret_idx = TypeTranslator::TranslateType(ret_type_die, ctx);
+    }
+
+    std::vector<llvm::codeview::TypeIndex> args;
+    for (const auto& child : die.children())
+    {
+        if (child.getTag() == llvm::dwarf::DW_TAG_formal_parameter)
+        {
+            llvm::DWARFDie param_type_die = child.resolveReferencedType(llvm::dwarf::DW_AT_type);
+            llvm::codeview::TypeIndex param_type_idx =
+                TypeTranslator::TranslateType(param_type_die, ctx);
+            args.push_back(param_type_idx);
+        }
+    }
+
+    llvm::codeview::ArgListRecord arg_list_rec(llvm::codeview::TypeRecordKind::ArgList, args);
+    llvm::codeview::TypeIndex arg_list_idx = ctx.m_typeBuilder.writeLeafType(arg_list_rec);
+
+    llvm::codeview::ProcedureRecord proc_rec(ret_idx,
+                                             llvm::codeview::CallingConvention::NearC,
+                                             llvm::codeview::FunctionOptions::None,
+                                             args.size(),
+                                             arg_list_idx);
+    return ctx.m_typeBuilder.writeLeafType(proc_rec);
+}
+
 llvm::codeview::TypeIndex TypeTranslator::TranslateType(const llvm::DWARFDie& die,
                                                         DebugTranslationContext& ctx)
 {
@@ -611,38 +645,16 @@ llvm::codeview::TypeIndex TypeTranslator::TranslateType(const llvm::DWARFDie& di
         const char* short_name = die.getName(llvm::DINameKind::ShortName);
         std::string name = parent_name.empty() ? short_name : (parent_name + "::" + short_name);
 
-        llvm::codeview::TypeIndex ret_idx = llvm::codeview::TypeIndex::Void();
-        auto type_opt = die.find(llvm::dwarf::DW_AT_type);
-        if (type_opt)
-        {
-            llvm::DWARFDie ret_type_die = die.resolveReferencedType(llvm::dwarf::DW_AT_type);
-            ret_idx = TranslateType(ret_type_die, ctx);
-        }
-
-        std::vector<llvm::codeview::TypeIndex> args;
-        for (const auto& child : die.children())
-        {
-            if (child.getTag() == llvm::dwarf::DW_TAG_formal_parameter)
-            {
-                llvm::DWARFDie param_type_die =
-                    child.resolveReferencedType(llvm::dwarf::DW_AT_type);
-                llvm::codeview::TypeIndex param_type_idx = TranslateType(param_type_die, ctx);
-                args.push_back(param_type_idx);
-            }
-        }
-
-        llvm::codeview::ArgListRecord arg_list_rec(llvm::codeview::TypeRecordKind::ArgList, args);
-        llvm::codeview::TypeIndex arg_list_idx = ctx.m_typeBuilder.writeLeafType(arg_list_rec);
-
-        llvm::codeview::ProcedureRecord proc_rec(ret_idx,
-                                                 llvm::codeview::CallingConvention::NearC,
-                                                 llvm::codeview::FunctionOptions::None,
-                                                 args.size(),
-                                                 arg_list_idx);
-        llvm::codeview::TypeIndex proc_idx = ctx.m_typeBuilder.writeLeafType(proc_rec);
+        llvm::codeview::TypeIndex proc_idx = translate_procedure_type(die, ctx);
 
         llvm::codeview::FuncIdRecord func_id_rec(llvm::codeview::TypeIndex::None(), proc_idx, name);
         resolved_idx = ctx.m_typeBuilder.writeLeafType(func_id_rec);
+        break;
+    }
+
+    case llvm::dwarf::DW_TAG_subroutine_type:
+    {
+        resolved_idx = translate_procedure_type(die, ctx);
         break;
     }
 

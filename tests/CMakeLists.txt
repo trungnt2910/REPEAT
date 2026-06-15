@@ -29,6 +29,7 @@ set(REPEAT_GOLDEN_ASM_FILES
     cv_arrays.s
     cv_enums.s
     cv_float.s
+    cv_func_ptr.s
     cv_huge_range.s
     cv_inheritance.s
     cv_inlined_vars.s
@@ -78,6 +79,7 @@ repeat_add_mock_elf(cv_anon_namespaces.so SRC data/cv_anon_namespaces.cpp CXX)
 repeat_add_mock_elf(cv_arrays.so SRC data/cv_arrays.c)
 repeat_add_mock_elf(cv_enums.so SRC data/cv_enums.c)
 repeat_add_mock_elf(cv_float.so SRC data/cv_float.c OPT -O2)
+repeat_add_mock_elf(cv_func_ptr.so SRC data/cv_func_ptr.c)
 repeat_add_mock_elf(cv_huge_range.so SRC data/cv_huge_range.c OPT -O2)
 repeat_add_mock_elf(cv_inheritance.so SRC data/cv_inheritance.cpp CXX)
 repeat_add_mock_elf(cv_inlined_vars.so SRC data/cv_inlined_vars.c)

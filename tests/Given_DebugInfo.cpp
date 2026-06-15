@@ -990,5 +990,25 @@ TEST_F(Given_DebugInfo, When_TranslatingFunction_EmitsCorrectEndOffsetPointer)
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_scope_end.s");
 }
 
+TEST_F(Given_DebugInfo, When_TranslatingFunctionPointer_EmitsProcedurePointerType)
+{
+    ASSERT_TRUE(std::filesystem::exists(GetTestDataPath("data/cv_func_ptr.so")))
+        << "File not found: " << GetTestDataPath("data/cv_func_ptr.so");
+    Translator translator(GetTestDataPath("data/cv_func_ptr.so"));
+    std::error_code ec = translator.Load();
+    ASSERT_FALSE(ec) << "Failed to load CV func ptr ELF: " << ec.message();
+    std::string asm_output;
+    llvm::raw_string_ostream os(asm_output);
+
+    translator.Translate(os);
+    os.flush();
+
+    // Leaf=4104 is LF_PROCEDURE
+    EXPECT_NE(asm_output.find(", Leaf=4104"), std::string::npos) << "Missing LF_PROCEDURE record";
+    // Leaf=4098 is LF_POINTER
+    EXPECT_NE(asm_output.find(", Leaf=4098"), std::string::npos) << "Missing LF_POINTER record";
+    ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_func_ptr.s");
+}
+
 } // namespace test
 } // namespace repeat
