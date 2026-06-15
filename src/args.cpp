@@ -14,6 +14,8 @@ const std::vector<Option>& ArgsParser::GetOptionDefs()
     static const std::vector<Option> optionDefs = {
         {"-h", "--help", "", "Display available options"},
         {"-o", "", "<file>", "Write output to <file>"},
+        {"-gcolumn-info", "", "", "Emit column number information in CodeView line tables"},
+        {"-gno-column-info", "", "", "Do not emit column number information (default)"},
     };
     return optionDefs;
 }
@@ -49,6 +51,14 @@ ArgsParser::Parse(int argc, const char* const argv[], std::ostream& out, std::os
                 {
                     args.m_showHelp = true;
                     return args;
+                }
+                else if (it->m_shortFlag == "-gcolumn-info")
+                {
+                    args.m_columnInfo = true;
+                }
+                else if (it->m_shortFlag == "-gno-column-info")
+                {
+                    args.m_columnInfo = false;
                 }
             }
             else

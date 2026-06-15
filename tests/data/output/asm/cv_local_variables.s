@@ -716,7 +716,7 @@ __elf_seg_B:
 func_code_start_get_static_var:
   .cv_func_id 0
 .seh_proc get_static_var
-  .cv_loc 0 1 4 0
+  .cv_loc 0 1 4
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -724,21 +724,19 @@ func_code_start_get_static_var:
 .byte 0xe5
 .seh_setframe rbp, 0
 .seh_endprologue
-  .cv_loc 0 1 6 12
+  .cv_loc 0 1 6
 .byte 0x8b
 .byte 0x05
 .byte 0x72
 .byte 0x20
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 6 28
 .byte 0x03
 .byte 0x05
 .byte 0x68
 .byte 0x20
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 6 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

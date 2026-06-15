@@ -11,8 +11,10 @@ namespace repeat
 
 namespace ob = llvm::object;
 
-Translator::Translator(const std::string& elf_path, llvm::raw_ostream& warningStream)
-    : m_elfPath(elf_path), m_warningStream(warningStream), m_impl(nullptr)
+Translator::Translator(const std::string& elf_path,
+                       bool columnInfo,
+                       llvm::raw_ostream& warningStream)
+    : m_elfPath(elf_path), m_columnInfo(columnInfo), m_warningStream(warningStream), m_impl(nullptr)
 {
 }
 
@@ -42,13 +44,13 @@ std::error_code Translator::Load()
 
     if (elf_obj->getBytesInAddress() == 8)
     {
-        m_impl =
-            std::make_unique<TranslatorImpl<llvm::object::ELF64LE>>(m_elfPath, m_warningStream);
+        m_impl = std::make_unique<TranslatorImpl<llvm::object::ELF64LE>>(
+            m_elfPath, m_columnInfo, m_warningStream);
     }
     else if (elf_obj->getBytesInAddress() == 4)
     {
-        m_impl =
-            std::make_unique<TranslatorImpl<llvm::object::ELF32LE>>(m_elfPath, m_warningStream);
+        m_impl = std::make_unique<TranslatorImpl<llvm::object::ELF32LE>>(
+            m_elfPath, m_columnInfo, m_warningStream);
     }
     else
     {

@@ -835,7 +835,7 @@ __elf_seg_A:
 __elf_seg_B:
 func_code_start_use:
   .cv_func_id 0
-  .cv_loc 0 1 4 16
+  .cv_loc 0 1 4
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -845,7 +845,7 @@ func_code_start_use:
 .byte 0x00
 .byte 0x89
 .byte 0x38
-  .cv_loc 0 1 5 1
+  .cv_loc 0 1 5
 .byte 0xc3
 func_code_end_use:
 .byte 0x66
@@ -857,15 +857,15 @@ func_code_end_use:
 func_code_start_huge_func:
   .cv_func_id 1
 .seh_proc huge_func
-  .cv_loc 1 1 8 0
+  .cv_loc 1 1 8
 .byte 0x53
 .seh_pushreg rbx
 .seh_endprologue
-  .cv_loc 1 1 9 19
+  .cv_loc 1 1 9
 .byte 0x8d
 .byte 0x5f
 .byte 0x05
-  .cv_loc 1 1 10 5
+  .cv_loc 1 1 10
 .byte 0x89
 .byte 0xdf
 .byte 0xe8
@@ -873,7 +873,7 @@ func_code_start_huge_func:
 .byte 0x11
 .byte 0x01
 .byte 0x00
-  .cv_loc 1 1 11 5
+  .cv_loc 1 1 11
 .byte 0x90
 .byte 0x90
 .byte 0x90
@@ -70874,7 +70874,7 @@ func_code_start_huge_func:
 .byte 0x90
 .byte 0x90
 .byte 0x90
-  .cv_loc 1 1 14 5
+  .cv_loc 1 1 14
 .byte 0x89
 .byte 0xdf
 .byte 0xe8
@@ -70882,10 +70882,9 @@ func_code_start_huge_func:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 1 1 15 5
+  .cv_loc 1 1 15
 .byte 0x89
 .byte 0xd8
-  .cv_loc 1 1 15 5
 .byte 0x5b
 .byte 0xc3
 .seh_endproc

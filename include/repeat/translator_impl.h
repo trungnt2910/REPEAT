@@ -32,8 +32,9 @@ template <typename ELFT>
 class TranslatorImpl : public TranslatorInstance
 {
 public:
-    TranslatorImpl(const std::string& elf_path, llvm::raw_ostream& warningStream)
+    TranslatorImpl(const std::string& elf_path, bool columnInfo, llvm::raw_ostream& warningStream)
         : m_elfPath(elf_path),
+          m_columnInfo(columnInfo),
           m_warningStream(warningStream),
           m_elfBuffer(nullptr),
           m_elfObj(nullptr),
@@ -140,7 +141,7 @@ public:
             m_dwarfCtx->dump(llvm::nulls(), DumpOpts);
 
             m_debugCtx = std::make_unique<DebugTranslationContext>(
-                m_dwarfCtx.get(), m_elfObj.get(), m_warningStream);
+                m_dwarfCtx.get(), m_elfObj.get(), m_columnInfo, m_warningStream);
 
             unsigned func_id = 0;
             for (const auto& pair : m_elfFunctions)
@@ -237,6 +238,7 @@ public:
 
 private:
     std::string m_elfPath;
+    bool m_columnInfo;
     llvm::raw_ostream& m_warningStream;
     std::unique_ptr<llvm::MemoryBuffer> m_elfBuffer;
     std::unique_ptr<llvm::object::ObjectFile> m_elfObj;

@@ -1003,7 +1003,7 @@ __elf_seg_A:
 __elf_seg_B:
 func_code_start_get_global_ptr:
   .cv_func_id 0
-  .cv_loc 0 1 9 5
+  .cv_loc 0 1 9
 .byte 0x80
 .byte 0x00
 .byte 0x00
@@ -1020,7 +1020,7 @@ func_code_end_get_global_ptr:
 func_code_start_call_ext:
   .cv_func_id 1
 .seh_proc call_ext
-  .cv_loc 1 1 15 0
+  .cv_loc 1 1 15
 .byte 0xfd
 .byte 0x7b
 .byte 0xbf
@@ -1033,17 +1033,15 @@ func_code_start_call_ext:
 .seh_frame x29, 0
 .seh_save_fplr 0
 .seh_endprologue
-  .cv_loc 1 1 16 12
+  .cv_loc 1 1 16
 .byte 0x0f
 .byte 0x00
 .byte 0x00
 .byte 0x94
-  .cv_loc 1 1 16 28
 .byte 0x00
 .byte 0x14
 .byte 0x00
 .byte 0x11
-  .cv_loc 1 1 16 5
 .byte 0xfd
 .byte 0x7b
 .byte 0xc1

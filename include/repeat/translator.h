@@ -31,7 +31,9 @@ public:
 class Translator
 {
 public:
-    Translator(const std::string& elf_path, llvm::raw_ostream& warningStream = llvm::errs());
+    Translator(const std::string& elf_path,
+               bool columnInfo = false,
+               llvm::raw_ostream& warningStream = llvm::errs());
     ~Translator();
 
     std::error_code Load();
@@ -43,6 +45,7 @@ public:
 
 private:
     std::string m_elfPath;
+    bool m_columnInfo;
     llvm::raw_ostream& m_warningStream;
     std::unique_ptr<TranslatorInstance> m_impl;
 };

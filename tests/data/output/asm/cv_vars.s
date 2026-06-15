@@ -655,7 +655,7 @@ __elf_seg_B:
 func_code_start_test_func:
   .cv_func_id 0
 .seh_proc test_func
-  .cv_loc 0 1 2 0
+  .cv_loc 0 1 2
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -666,39 +666,33 @@ func_code_start_test_func:
 .byte 0x89
 .byte 0x7d
 .byte 0xfc
-  .cv_loc 0 1 3 23
+  .cv_loc 0 1 3
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 3 31
 .byte 0x83
 .byte 0xc0
 .byte 0x05
-  .cv_loc 0 1 3 9
 .byte 0x89
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 4 30
+  .cv_loc 0 1 4
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 4 38
 .byte 0x83
 .byte 0xe8
 .byte 0x05
-  .cv_loc 0 1 4 18
 .byte 0x89
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 5 12
+  .cv_loc 0 1 5
 .byte 0x8b
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 5 24
 .byte 0x03
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 5 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

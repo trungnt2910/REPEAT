@@ -221,6 +221,71 @@ TEST_F(Given_Arguments, When_ParseMissingOutputFile_ThrowsCommandLineException)
     EXPECT_STREQ(thrownException->what(), "no output file specified");
     EXPECT_TRUE(thrownException->ShouldShowHelp());
 }
+TEST_F(Given_Arguments, When_ParseColumnInfo_SetsColumnInfo)
+{
+    const char* argv[] = {
+        "repeat",
+        "input.elf",
+        "-o",
+        "output.s",
+        "-gcolumn-info",
+    };
+    int argc = sizeof(argv) / sizeof(argv[0]);
+
+    ParsedArgs args = ArgsParser::Parse(argc, argv, m_out, m_err);
+
+    EXPECT_TRUE(args.m_columnInfo);
+}
+
+TEST_F(Given_Arguments, When_ParseNoColumnInfo_ClearsColumnInfo)
+{
+    const char* argv[] = {
+        "repeat",
+        "input.elf",
+        "-o",
+        "output.s",
+        "-gno-column-info",
+    };
+    int argc = sizeof(argv) / sizeof(argv[0]);
+
+    ParsedArgs args = ArgsParser::Parse(argc, argv, m_out, m_err);
+
+    EXPECT_FALSE(args.m_columnInfo);
+}
+
+TEST_F(Given_Arguments, When_ParseMultipleColumnInfoFlags_LastFlagNoColumnInfoWins)
+{
+    const char* argv[] = {
+        "repeat",
+        "input.elf",
+        "-o",
+        "output.s",
+        "-gcolumn-info",
+        "-gno-column-info",
+    };
+    int argc = sizeof(argv) / sizeof(argv[0]);
+
+    ParsedArgs args = ArgsParser::Parse(argc, argv, m_out, m_err);
+
+    EXPECT_FALSE(args.m_columnInfo);
+}
+
+TEST_F(Given_Arguments, When_ParseMultipleColumnInfoFlags_LastFlagColumnInfoWins)
+{
+    const char* argv[] = {
+        "repeat",
+        "input.elf",
+        "-o",
+        "output.s",
+        "-gno-column-info",
+        "-gcolumn-info",
+    };
+    int argc = sizeof(argv) / sizeof(argv[0]);
+
+    ParsedArgs args = ArgsParser::Parse(argc, argv, m_out, m_err);
+
+    EXPECT_TRUE(args.m_columnInfo);
+}
 
 TEST_F(Given_Arguments, When_PrintHelp_GeneratesFormattedHelpOutput)
 {

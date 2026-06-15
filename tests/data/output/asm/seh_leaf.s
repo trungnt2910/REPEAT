@@ -654,11 +654,10 @@ __elf_seg_A:
 __elf_seg_B:
 func_code_start_leaf_func:
   .cv_func_id 0
-  .cv_loc 0 1 3 14
+  .cv_loc 0 1 3
 .byte 0x8d
 .byte 0x04
 .byte 0x3f
-  .cv_loc 0 1 3 5
 .byte 0xc3
 func_code_end_leaf_func:
 .org __elf_base + 8856

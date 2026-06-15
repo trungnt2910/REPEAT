@@ -3,5 +3,7 @@ OVERVIEW: REPEAT ELF repackager
 USAGE: repeat [options] <input_elf>
 
 OPTIONS:
-  -h, --help    Display available options
-  -o <file>     Write output to <file>
+  -h, --help          Display available options
+  -o <file>           Write output to <file>
+  -gcolumn-info       Emit column number information in CodeView line tables
+  -gno-column-info    Do not emit column number information (default)

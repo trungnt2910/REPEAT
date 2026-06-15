@@ -1080,7 +1080,7 @@ __elf_seg_B:
 func_code_start__Z4mainv:
   .cv_func_id 0
 .seh_proc _Z4mainv
-  .cv_loc 0 1 124 0
+  .cv_loc 0 1 124
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -1092,7 +1092,7 @@ func_code_start__Z4mainv:
 .byte 0x83
 .byte 0xec
 .byte 0x70
-  .cv_loc 0 1 125 19
+  .cv_loc 0 1 125
 .byte 0x48
 .byte 0x8d
 .byte 0x7d
@@ -1102,12 +1102,12 @@ func_code_start__Z4mainv:
 .byte 0x02
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 126 22
+  .cv_loc 0 1 126
 .byte 0xc6
 .byte 0x45
 .byte 0xc8
 .byte 0x00
-  .cv_loc 0 1 127 23
+  .cv_loc 0 1 127
 .byte 0x48
 .byte 0xc7
 .byte 0x45
@@ -1116,26 +1116,26 @@ func_code_start__Z4mainv:
 .byte 0x02
 .byte 0x96
 .byte 0x49
-  .cv_loc 0 1 128 23
+  .cv_loc 0 1 128
 .byte 0x66
 .byte 0xc7
 .byte 0x45
 .byte 0xd8
 .byte 0x00
 .byte 0x7d
-  .cv_loc 0 1 129 17
+  .cv_loc 0 1 129
 .byte 0xc6
 .byte 0x45
 .byte 0xda
 .byte 0x41
-  .cv_loc 0 1 130 18
+  .cv_loc 0 1 130
 .byte 0x66
 .byte 0xc7
 .byte 0x45
 .byte 0xdc
 .byte 0x50
 .byte 0xc3
-  .cv_loc 0 1 131 21
+  .cv_loc 0 1 131
 .byte 0x48
 .byte 0xb8
 .byte 0xff
@@ -1157,7 +1157,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 111 5
+  .cv_loc 0 1 111
 .byte 0x90
 .byte 0x90
 .byte 0x90
@@ -1358,19 +1358,18 @@ func_code_start__Z4mainv:
 .byte 0x90
 .byte 0x90
 .byte 0x90
-  .cv_loc 0 1 112 12
+  .cv_loc 0 1 112
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 112 14
 .byte 0x83
 .byte 0xc0
 .byte 0x05
-  .cv_loc 0 1 135 9
+  .cv_loc 0 1 135
 .byte 0x89
 .byte 0x45
 .byte 0xbc
-  .cv_loc 0 1 140 5
+  .cv_loc 0 1 140
 .byte 0xbf
 .byte 0x0a
 .byte 0x00
@@ -1408,7 +1407,7 @@ func_code_start__Z4mainv:
 .byte 0x01
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 143 31
+  .cv_loc 0 1 143
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1418,15 +1417,14 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x8b
 .byte 0x00
-  .cv_loc 0 1 143 18
 .byte 0x89
 .byte 0x45
 .byte 0xb8
-  .cv_loc 0 1 144 11
+  .cv_loc 0 1 144
 .byte 0x8b
 .byte 0x45
 .byte 0xb8
-  .cv_loc 0 1 150 18
+  .cv_loc 0 1 150
 .byte 0xc7
 .byte 0x45
 .byte 0xa8
@@ -1434,7 +1432,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 151 18
+  .cv_loc 0 1 151
 .byte 0xc7
 .byte 0x45
 .byte 0xa4
@@ -1442,7 +1440,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 152 18
+  .cv_loc 0 1 152
 .byte 0xc7
 .byte 0x45
 .byte 0xa0
@@ -1450,7 +1448,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 153 18
+  .cv_loc 0 1 153
 .byte 0xc7
 .byte 0x45
 .byte 0x9c
@@ -1458,7 +1456,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 154 18
+  .cv_loc 0 1 154
 .byte 0xc7
 .byte 0x45
 .byte 0x98
@@ -1466,7 +1464,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 155 18
+  .cv_loc 0 1 155
 .byte 0xc7
 .byte 0x45
 .byte 0x94
@@ -1474,7 +1472,7 @@ func_code_start__Z4mainv:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 158 5
+  .cv_loc 0 1 158
 .byte 0x90
 .byte 0x90
 .byte 0x90
@@ -1675,39 +1673,32 @@ func_code_start__Z4mainv:
 .byte 0x90
 .byte 0x90
 .byte 0x90
-  .cv_loc 0 1 159 25
+  .cv_loc 0 1 159
 .byte 0x8b
 .byte 0x45
 .byte 0xa8
-  .cv_loc 0 1 159 31
 .byte 0x03
 .byte 0x45
 .byte 0xa4
-  .cv_loc 0 1 159 39
 .byte 0x03
 .byte 0x45
 .byte 0xa0
-  .cv_loc 0 1 159 47
 .byte 0x03
 .byte 0x45
 .byte 0x9c
-  .cv_loc 0 1 159 55
 .byte 0x03
 .byte 0x45
 .byte 0x98
-  .cv_loc 0 1 159 63
 .byte 0x03
 .byte 0x45
 .byte 0x94
-  .cv_loc 0 1 159 23
 .byte 0x66
 .byte 0x89
 .byte 0x45
 .byte 0xd8
-  .cv_loc 0 1 161 5
+  .cv_loc 0 1 161
 .byte 0x31
 .byte 0xc0
-  .cv_loc 0 1 161 5
 .byte 0x48
 .byte 0x83
 .byte 0xc4
@@ -1728,7 +1719,7 @@ func_code_end__Z4mainv:
 func_code_start__ZL24test_parameter_registersiiiiii.5776:
   .cv_func_id 1
 .seh_proc _ZL24test_parameter_registersiiiiii.5776
-  .cv_loc 1 1 118 0
+  .cv_loc 1 1 118
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -1756,39 +1747,33 @@ func_code_start__ZL24test_parameter_registersiiiiii.5776:
 .byte 0x89
 .byte 0x4d
 .byte 0xe8
-  .cv_loc 1 1 119 24
+  .cv_loc 1 1 119
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 1 1 119 30
 .byte 0x03
 .byte 0x45
 .byte 0xf8
-  .cv_loc 1 1 119 38
 .byte 0x03
 .byte 0x45
 .byte 0xf4
-  .cv_loc 1 1 119 46
 .byte 0x03
 .byte 0x45
 .byte 0xf0
-  .cv_loc 1 1 119 54
 .byte 0x03
 .byte 0x45
 .byte 0xec
-  .cv_loc 1 1 119 61
 .byte 0x03
 .byte 0x45
 .byte 0xe8
-  .cv_loc 1 1 119 18
 .byte 0x89
 .byte 0x45
 .byte 0xe4
-  .cv_loc 1 1 120 11
+  .cv_loc 1 1 120
 .byte 0x8b
 .byte 0x45
 .byte 0xe4
-  .cv_loc 1 1 121 1
+  .cv_loc 1 1 121
 .byte 0x5d
 .byte 0xc3
 .seh_endproc
@@ -1810,7 +1795,7 @@ func_code_end__ZL24test_parameter_registersiiiiii.5776:
 func_code_start__ZN13AdvancedClassC2Ev:
   .cv_func_id 2
 .seh_proc _ZN13AdvancedClassC2Ev
-  .cv_loc 2 1 78 0
+  .cv_loc 2 1 78
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -1826,14 +1811,14 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x8b
 .byte 0x45
 .byte 0xf8
-  .cv_loc 2 1 68 11
+  .cv_loc 2 1 68
 .byte 0xc7
 .byte 0x00
 .byte 0x0a
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 69 11
+  .cv_loc 2 1 69
 .byte 0xc7
 .byte 0x40
 .byte 0x04
@@ -1841,12 +1826,12 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 70 11
+  .cv_loc 2 1 70
 .byte 0xc6
 .byte 0x40
 .byte 0x08
 .byte 0x01
-  .cv_loc 2 1 71 11
+  .cv_loc 2 1 71
 .byte 0x48
 .byte 0xc7
 .byte 0x40
@@ -1855,26 +1840,26 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 72 11
+  .cv_loc 2 1 72
 .byte 0x66
 .byte 0xc7
 .byte 0x40
 .byte 0x18
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 73 11
+  .cv_loc 2 1 73
 .byte 0xc6
 .byte 0x40
 .byte 0x1a
 .byte 0x00
-  .cv_loc 2 1 74 11
+  .cv_loc 2 1 74
 .byte 0x66
 .byte 0xc7
 .byte 0x40
 .byte 0x1c
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 75 11
+  .cv_loc 2 1 75
 .byte 0x48
 .byte 0xc7
 .byte 0x40
@@ -1883,7 +1868,7 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 76 11
+  .cv_loc 2 1 76
 .byte 0x48
 .byte 0xc7
 .byte 0x40
@@ -1892,7 +1877,7 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 77 11
+  .cv_loc 2 1 77
 .byte 0x48
 .byte 0xc7
 .byte 0x40
@@ -1901,7 +1886,7 @@ func_code_start__ZN13AdvancedClassC2Ev:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 79 5
+  .cv_loc 2 1 79
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

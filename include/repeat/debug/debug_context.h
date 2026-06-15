@@ -67,15 +67,23 @@ struct DebugTranslationContext
     // Maps function start address to its CodeView FunctionId.
     std::map<uint64_t, unsigned> m_funcToIdMap;
 
+    // Tracks the last emitted line for each function to avoid redundant .cv_loc directives.
+    std::map<uint64_t, LineInfo> m_lastEmittedLine;
+
+    // Controls whether column number information is emitted.
+    bool m_columnInfo;
+
     // Stream for emitting translation warnings.
     llvm::raw_ostream& m_warningStream;
 
     DebugTranslationContext(llvm::DWARFContext* dwarf,
                             const llvm::object::ObjectFile* elf,
+                            bool columnInfo,
                             llvm::raw_ostream& warningStream)
         : m_typeBuilder(m_typeBuilderAllocator),
           m_dwarfCtx(dwarf),
           m_elfObj(elf),
+          m_columnInfo(columnInfo),
           m_warningStream(warningStream)
     {
     }

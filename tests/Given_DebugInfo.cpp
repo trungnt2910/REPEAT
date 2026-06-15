@@ -2,6 +2,7 @@
 #include <regex>
 #include <sstream>
 #include <string>
+#include <string_view>
 
 #include <gtest/gtest.h>
 #include <llvm/DebugInfo/DWARF/DWARFContext.h>
@@ -27,6 +28,48 @@ static std::string ToByteSequence(const std::string& str, bool null_terminate = 
         result += "  .byte 0\n";
     }
     return result;
+}
+
+static ::testing::AssertionResult VerifyLocDirectives(const std::string& asm_output,
+                                                      size_t count_limit,
+                                                      bool expected_has_column,
+                                                      bool exact_count = true)
+{
+    std::regex re(R"(\.cv_loc\s+(\d+)\s+(\d+)\s+(\d+)(?:\s+(\d+))?)");
+    auto begin = std::sregex_iterator(asm_output.begin(), asm_output.end(), re);
+    auto end = std::sregex_iterator();
+
+    size_t count = 0;
+    for (auto it = begin; it != end; ++it)
+    {
+        count++;
+        std::smatch match = *it;
+        if (match[4].matched != expected_has_column)
+        {
+            return ::testing::AssertionFailure()
+                   << "Directive " << match.str() << " has column=" << match[4].matched
+                   << ", expected=" << expected_has_column;
+        }
+    }
+
+    if (exact_count)
+    {
+        if (count != count_limit)
+        {
+            return ::testing::AssertionFailure()
+                   << "Expected exactly " << count_limit << " .cv_loc directives, got " << count;
+        }
+    }
+    else
+    {
+        if (count < count_limit)
+        {
+            return ::testing::AssertionFailure()
+                   << "Expected at least " << count_limit << " .cv_loc directives, got " << count;
+        }
+    }
+
+    return ::testing::AssertionSuccess();
 }
 
 class Given_DebugInfo : public RepeatTest
@@ -80,7 +123,7 @@ TEST_F(Given_DebugInfo, When_TranslatingELFWithDebugInfo_EmitsLocDirectives)
     translator.Translate(os);
     os.flush();
 
-    EXPECT_NE(asm_output.find(".cv_loc 0 1 9 0"), std::string::npos)
+    EXPECT_NE(asm_output.find(".cv_loc 0 1 9"), std::string::npos)
         << "Missing expected .cv_loc directive for get_val";
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/valid_elf.s");
 }
@@ -452,7 +495,7 @@ TEST_F(Given_DebugInfo, When_TranslatingHugeRange_SplitsDefRangeRecords)
         << "File not found: " << GetTestDataPath("data/cv_huge_range.so");
     std::string warnings;
     llvm::raw_string_ostream warn_os(warnings);
-    Translator translator(GetTestDataPath("data/cv_huge_range.so"), warn_os);
+    Translator translator(GetTestDataPath("data/cv_huge_range.so"), /*columnInfo=*/false, warn_os);
     std::error_code ec = translator.Load();
     ASSERT_FALSE(ec) << "Failed to load: " << ec.message();
     std::string asm_output;
@@ -472,7 +515,8 @@ TEST_F(Given_DebugInfo, When_TranslatingMovingVariables_EmitsLocalAndDefRangeRec
 {
     ASSERT_TRUE(std::filesystem::exists(GetTestDataPath("data/cv_moving_var.so")))
         << "File not found: " << GetTestDataPath("data/cv_moving_var.so");
-    Translator translator(GetTestDataPath("data/cv_moving_var.so"), llvm::nulls());
+    Translator translator(
+        GetTestDataPath("data/cv_moving_var.so"), /*columnInfo=*/false, llvm::nulls());
     std::error_code ec = translator.Load();
     ASSERT_FALSE(ec) << "Failed to load: " << ec.message();
     std::string asm_output;
@@ -496,7 +540,7 @@ TEST_F(Given_DebugInfo, When_TranslatingSpilledVariables_EmitsRegisterRelDefRang
         << "File not found: " << GetTestDataPath("data/cv_spill.so");
     std::string warnings;
     llvm::raw_string_ostream warn_os(warnings);
-    Translator translator(GetTestDataPath("data/cv_spill.so"), warn_os);
+    Translator translator(GetTestDataPath("data/cv_spill.so"), /*columnInfo=*/false, warn_os);
     std::error_code ec = translator.Load();
     ASSERT_FALSE(ec) << "Failed to load: " << ec.message();
     std::string asm_output;
@@ -521,7 +565,8 @@ TEST_F(Given_DebugInfo, When_TranslatingUnsupportedLocations_EmitsWarnings)
         << "File not found: " << GetTestDataPath("data/cv_unsupported_loc.so");
     std::string warnings;
     llvm::raw_string_ostream warn_os(warnings);
-    Translator translator(GetTestDataPath("data/cv_unsupported_loc.so"), warn_os);
+    Translator translator(
+        GetTestDataPath("data/cv_unsupported_loc.so"), /*columnInfo=*/false, warn_os);
     std::error_code ec = translator.Load();
     ASSERT_FALSE(ec) << "Failed to load: " << ec.message();
     std::string asm_output;
@@ -1008,6 +1053,42 @@ TEST_F(Given_DebugInfo, When_TranslatingFunctionPointer_EmitsProcedurePointerTyp
     // Leaf=4098 is LF_POINTER
     EXPECT_NE(asm_output.find(", Leaf=4098"), std::string::npos) << "Missing LF_POINTER record";
     ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_func_ptr.s");
+}
+
+TEST_F(Given_DebugInfo, When_TranslatingWithDuplicateLines_EmitsDeduplicatedLocDirectives)
+{
+    ASSERT_TRUE(std::filesystem::exists(GetTestDataPath("data/cv_loc_dedup.so")))
+        << "File not found: " << GetTestDataPath("data/cv_loc_dedup.so");
+    Translator translator(GetTestDataPath("data/cv_loc_dedup.so"));
+    std::error_code ec = translator.Load();
+    ASSERT_FALSE(ec) << "Failed to load CV dedup ELF: " << ec.message();
+    std::string asm_output;
+    llvm::raw_string_ostream os(asm_output);
+
+    translator.Translate(os);
+    os.flush();
+
+    EXPECT_TRUE(VerifyLocDirectives(asm_output, 3, false));
+    ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_loc_dedup.s");
+}
+
+TEST_F(Given_DebugInfo,
+       When_TranslatingWithDuplicateLinesAndColumnInfo_EmitsAllLocDirectivesWithColumns)
+{
+    ASSERT_TRUE(std::filesystem::exists(GetTestDataPath("data/cv_loc_dedup.so")))
+        << "File not found: " << GetTestDataPath("data/cv_loc_dedup.so");
+    Translator translator(
+        GetTestDataPath("data/cv_loc_dedup.so"), /*columnInfo=*/true, llvm::errs());
+    std::error_code ec = translator.Load();
+    ASSERT_FALSE(ec) << "Failed to load CV dedup ELF: " << ec.message();
+    std::string asm_output;
+    llvm::raw_string_ostream os(asm_output);
+
+    translator.Translate(os);
+    os.flush();
+
+    EXPECT_TRUE(VerifyLocDirectives(asm_output, 4, true, /*exact_count=*/false));
+    ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_loc_dedup_col.s");
 }
 
 } // namespace test

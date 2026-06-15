@@ -664,7 +664,7 @@ __elf_seg_B:
 func_code_start__Z9call_anonv:
   .cv_func_id 0
 .seh_proc _Z9call_anonv
-  .cv_loc 0 1 10 0
+  .cv_loc 0 1 10
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -672,7 +672,7 @@ func_code_start__Z9call_anonv:
 .byte 0xe5
 .seh_setframe rbp, 0
 .seh_endprologue
-  .cv_loc 0 1 11 16
+  .cv_loc 0 1 11
 .byte 0x8b
 .byte 0x05
 .byte 0xee
@@ -682,11 +682,10 @@ func_code_start__Z9call_anonv:
 .byte 0x89
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 12 22
+  .cv_loc 0 1 12
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 12 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

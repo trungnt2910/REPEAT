@@ -657,7 +657,7 @@ __elf_seg_B:
 func_code_start_simple_func:
   .cv_func_id 0
 .seh_proc simple_func
-  .cv_loc 0 1 2 0
+  .cv_loc 0 1 2
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -671,15 +671,13 @@ func_code_start_simple_func:
 .byte 0x89
 .byte 0x75
 .byte 0xf8
-  .cv_loc 0 1 3 12
+  .cv_loc 0 1 3
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 3 20
 .byte 0x03
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 3 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

@@ -34,6 +34,8 @@ set(REPEAT_GOLDEN_ASM_FILES
     cv_inheritance.s
     cv_inlined_vars.s
     cv_lines.s
+    cv_loc_dedup.s
+    cv_loc_dedup_col.s
     cv_local_functions.s
     cv_local_variables.s
     cv_methods.s
@@ -84,6 +86,7 @@ repeat_add_mock_elf(cv_huge_range.so SRC data/cv_huge_range.c OPT -O2)
 repeat_add_mock_elf(cv_inheritance.so SRC data/cv_inheritance.cpp CXX)
 repeat_add_mock_elf(cv_inlined_vars.so SRC data/cv_inlined_vars.c)
 repeat_add_mock_elf(cv_lines.so SRC data/cv_lines.c)
+repeat_add_mock_elf(cv_loc_dedup.so SRC data/cv_loc_dedup.c)
 repeat_add_mock_elf(cv_local_functions.so SRC data/cv_local_functions.c)
 repeat_add_mock_elf(cv_local_variables.so SRC data/cv_local_variables.c)
 repeat_add_mock_elf(cv_methods.so SRC data/cv_methods.cpp CXX)

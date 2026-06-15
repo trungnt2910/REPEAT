@@ -119,8 +119,21 @@ void LineTranslator::EmitLineLoc(uint64_t addr,
         auto func_it = ctx.m_funcToIdMap.find(func_start);
         if (func_it != ctx.m_funcToIdMap.end())
         {
-            os << "  .cv_loc " << func_it->second << " " << it->second.m_fileIdx << " "
-               << it->second.m_line << " " << it->second.m_column << "\n";
+            if (ctx.m_columnInfo)
+            {
+                os << "  .cv_loc " << func_it->second << " " << it->second.m_fileIdx << " "
+                   << it->second.m_line << " " << it->second.m_column << "\n";
+            }
+            else
+            {
+                auto& last = ctx.m_lastEmittedLine[func_start];
+                if (last.m_fileIdx != it->second.m_fileIdx || last.m_line != it->second.m_line)
+                {
+                    last = it->second;
+                    os << "  .cv_loc " << func_it->second << " " << it->second.m_fileIdx << " "
+                       << it->second.m_line << "\n";
+                }
+            }
         }
     }
 }

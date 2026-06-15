@@ -800,7 +800,7 @@ __elf_seg_B:
 func_code_start__Z11call_nestedi:
   .cv_func_id 0
 .seh_proc _Z11call_nestedi
-  .cv_loc 0 1 20 0
+  .cv_loc 0 1 20
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -811,7 +811,7 @@ func_code_start__Z11call_nestedi:
 .byte 0x89
 .byte 0x7d
 .byte 0xdc
-  .cv_loc 0 1 21 25
+  .cv_loc 0 1 21
 .byte 0x8b
 .byte 0x45
 .byte 0xdc
@@ -825,87 +825,78 @@ func_code_start__Z11call_nestedi:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 14 15
+  .cv_loc 0 1 14
 .byte 0x8b
 .byte 0x45
 .byte 0xec
-  .cv_loc 0 1 14 17
 .byte 0x03
 .byte 0x45
 .byte 0xe8
-  .cv_loc 0 1 14 9
 .byte 0x89
 .byte 0x45
 .byte 0xe4
-  .cv_loc 0 1 15 28
+  .cv_loc 0 1 15
 .byte 0x8b
 .byte 0x45
 .byte 0xe4
 .byte 0x89
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 3 21
+  .cv_loc 0 1 3
 .byte 0x8b
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 3 23
 .byte 0x83
 .byte 0xc0
 .byte 0x05
-  .cv_loc 0 1 3 9
 .byte 0x89
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 4 19
+  .cv_loc 0 1 4
 .byte 0x83
 .byte 0x7d
 .byte 0xf4
 .byte 0x0a
-  .cv_loc 0 1 4 9
 .byte 0x7e
 .byte 0x10
-  .cv_loc 0 1 6 27
+  .cv_loc 0 1 6
 .byte 0x8b
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 6 37
 .byte 0xd1
 .byte 0xe0
-  .cv_loc 0 1 6 13
 .byte 0x89
 .byte 0x45
 .byte 0xf0
-  .cv_loc 0 1 7 16
+  .cv_loc 0 1 7
 .byte 0x8b
 .byte 0x45
 .byte 0xf0
-  .cv_loc 0 1 7 9
 .byte 0x89
 .byte 0x45
 .byte 0xfc
 .byte 0xeb
 .byte 0x06
-  .cv_loc 0 1 9 12
+  .cv_loc 0 1 9
 .byte 0x8b
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 9 5
 .byte 0x89
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 10 1
+  .cv_loc 0 1 10
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 15 9
+  .cv_loc 0 1 15
 .byte 0x89
 .byte 0x45
 .byte 0xe0
-  .cv_loc 0 1 16 12
+  .cv_loc 0 1 16
 .byte 0x8b
 .byte 0x45
 .byte 0xe0
-  .cv_loc 0 1 21 5
+  .cv_loc 0 1 21
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

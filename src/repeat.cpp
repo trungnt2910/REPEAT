@@ -35,7 +35,7 @@ int Repeat::Run(int argc, const char* const argv[])
         }
 
         llvm::raw_os_ostream raw_err(m_err);
-        Translator translator(args.m_inputElf, raw_err);
+        Translator translator(args.m_inputElf, args.m_columnInfo, raw_err);
         std::error_code ec = translator.Load();
         if (ec)
         {

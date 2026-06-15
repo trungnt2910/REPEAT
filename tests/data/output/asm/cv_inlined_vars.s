@@ -654,7 +654,7 @@ __elf_seg_B:
 func_code_start_call_add:
   .cv_func_id 0
 .seh_proc call_add
-  .cv_loc 0 1 8 0
+  .cv_loc 0 1 8
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -665,7 +665,7 @@ func_code_start_call_add:
 .byte 0x89
 .byte 0x7d
 .byte 0xf0
-  .cv_loc 0 1 9 23
+  .cv_loc 0 1 9
 .byte 0x8b
 .byte 0x45
 .byte 0xf0
@@ -679,23 +679,21 @@ func_code_start_call_add:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 3 15
+  .cv_loc 0 1 3
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 0 1 3 17
 .byte 0x03
 .byte 0x45
 .byte 0xf8
-  .cv_loc 0 1 3 9
 .byte 0x89
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 4 12
+  .cv_loc 0 1 4
 .byte 0x8b
 .byte 0x45
 .byte 0xf4
-  .cv_loc 0 1 9 5
+  .cv_loc 0 1 9
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

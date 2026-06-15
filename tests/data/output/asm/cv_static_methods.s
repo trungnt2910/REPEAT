@@ -1040,7 +1040,7 @@ __elf_seg_B:
 func_code_start__Z11call_staticv:
   .cv_func_id 0
 .seh_proc _Z11call_staticv
-  .cv_loc 0 1 12 0
+  .cv_loc 0 1 12
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -1048,13 +1048,12 @@ func_code_start__Z11call_staticv:
 .byte 0xe5
 .seh_setframe rbp, 0
 .seh_endprologue
-  .cv_loc 0 1 13 12
+  .cv_loc 0 1 13
 .byte 0xe8
 .byte 0x27
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 0 1 13 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc
@@ -1067,7 +1066,7 @@ func_code_end__Z11call_staticv:
 func_code_start__ZN17StaticMethodClass11GetConstantEv:
   .cv_func_id 1
 .seh_proc _ZN17StaticMethodClass11GetConstantEv
-  .cv_loc 1 1 4 0
+  .cv_loc 1 1 4
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -1075,13 +1074,12 @@ func_code_start__ZN17StaticMethodClass11GetConstantEv:
 .byte 0xe5
 .seh_setframe rbp, 0
 .seh_endprologue
-  .cv_loc 1 1 5 9
+  .cv_loc 1 1 5
 .byte 0xb8
 .byte 0x64
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 1 1 5 9
 .byte 0x5d
 .byte 0xc3
 .seh_endproc

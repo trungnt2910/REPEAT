@@ -1363,7 +1363,7 @@ __elf_seg_A:
 __elf_seg_B:
 func_code_start_use:
   .cv_func_id 0
-  .cv_loc 0 1 13 16
+  .cv_loc 0 1 13
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1373,7 +1373,7 @@ func_code_start_use:
 .byte 0x00
 .byte 0x89
 .byte 0x38
-  .cv_loc 0 1 14 1
+  .cv_loc 0 1 14
 .byte 0xc3
 func_code_end_use:
 .byte 0x66
@@ -1384,36 +1384,29 @@ func_code_end_use:
 .byte 0x00
 func_code_start_use_many:
   .cv_func_id 1
-  .cv_loc 1 1 17 20
+  .cv_loc 1 1 17
 .byte 0x01
 .byte 0xf7
-  .cv_loc 1 1 17 24
 .byte 0x01
 .byte 0xca
-  .cv_loc 1 1 17 28
 .byte 0x01
 .byte 0xfa
-  .cv_loc 1 1 17 32
 .byte 0x45
 .byte 0x01
 .byte 0xc8
-  .cv_loc 1 1 17 36
 .byte 0x41
 .byte 0x01
 .byte 0xd0
-  .cv_loc 1 1 17 40
 .byte 0x44
 .byte 0x03
 .byte 0x44
 .byte 0x24
 .byte 0x08
-  .cv_loc 1 1 17 44
 .byte 0x44
 .byte 0x03
 .byte 0x44
 .byte 0x24
 .byte 0x10
-  .cv_loc 1 1 17 16
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1424,7 +1417,7 @@ func_code_start_use_many:
 .byte 0x44
 .byte 0x89
 .byte 0x00
-  .cv_loc 1 1 18 1
+  .cv_loc 1 1 18
 .byte 0xc3
 func_code_end_use_many:
 .byte 0x66
@@ -1445,7 +1438,7 @@ func_code_end_use_many:
 func_code_start_test_spill:
   .cv_func_id 2
 .seh_proc test_spill
-  .cv_loc 2 1 21 0
+  .cv_loc 2 1 21
 .byte 0x55
 .seh_stackalloc 8
 .byte 0x41
@@ -1475,22 +1468,22 @@ func_code_start_test_spill:
 .seh_pushreg rbp
 .byte 0x89
 .byte 0xf3
-  .cv_loc 2 1 22 19
+  .cv_loc 2 1 22
 .byte 0x83
 .byte 0xc7
 .byte 0x05
-  .cv_loc 2 1 0 19
+  .cv_loc 2 1 0
 .byte 0x89
 .byte 0x7c
 .byte 0x24
 .byte 0x0c
-  .cv_loc 2 1 23 5
+  .cv_loc 2 1 23
 .byte 0xe8
 .byte 0xc4
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 25 14
+  .cv_loc 2 1 25
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1500,12 +1493,12 @@ func_code_start_test_spill:
 .byte 0x00
 .byte 0x8b
 .byte 0x38
-  .cv_loc 2 1 0 14
+  .cv_loc 2 1 0
 .byte 0x89
 .byte 0x7c
 .byte 0x24
 .byte 0x04
-  .cv_loc 2 1 25 23
+  .cv_loc 2 1 25
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1515,7 +1508,6 @@ func_code_start_test_spill:
 .byte 0x00
 .byte 0x8b
 .byte 0x28
-  .cv_loc 2 1 25 32
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1526,7 +1518,6 @@ func_code_start_test_spill:
 .byte 0x44
 .byte 0x8b
 .byte 0x20
-  .cv_loc 2 1 25 41
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1537,7 +1528,6 @@ func_code_start_test_spill:
 .byte 0x44
 .byte 0x8b
 .byte 0x30
-  .cv_loc 2 1 25 50
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1548,7 +1538,6 @@ func_code_start_test_spill:
 .byte 0x44
 .byte 0x8b
 .byte 0x28
-  .cv_loc 2 1 25 59
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1559,13 +1548,13 @@ func_code_start_test_spill:
 .byte 0x44
 .byte 0x8b
 .byte 0x08
-  .cv_loc 2 1 0 59
+  .cv_loc 2 1 0
 .byte 0x44
 .byte 0x89
 .byte 0x4c
 .byte 0x24
 .byte 0x08
-  .cv_loc 2 1 25 68
+  .cv_loc 2 1 25
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1576,7 +1565,6 @@ func_code_start_test_spill:
 .byte 0x44
 .byte 0x8b
 .byte 0x38
-  .cv_loc 2 1 25 77
 .byte 0x48
 .byte 0x8b
 .byte 0x05
@@ -1586,13 +1574,13 @@ func_code_start_test_spill:
 .byte 0x00
 .byte 0x8b
 .byte 0x00
-  .cv_loc 2 1 0 77
+  .cv_loc 2 1 0
 .byte 0x48
 .byte 0x89
 .byte 0x44
 .byte 0x24
 .byte 0x10
-  .cv_loc 2 1 26 5
+  .cv_loc 2 1 26
 .byte 0x89
 .byte 0xee
 .byte 0x44
@@ -1619,13 +1607,13 @@ func_code_start_test_spill:
 .byte 0xc4
 .byte 0x10
 .seh_stackalloc 72
-  .cv_loc 2 1 28 19
+  .cv_loc 2 1 28
 .byte 0x0f
 .byte 0xaf
 .byte 0x5c
 .byte 0x24
 .byte 0x0c
-  .cv_loc 2 1 29 5
+  .cv_loc 2 1 29
 .byte 0x89
 .byte 0xdf
 .byte 0xe8
@@ -1633,47 +1621,38 @@ func_code_start_test_spill:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-  .cv_loc 2 1 31 18
+  .cv_loc 2 1 31
 .byte 0x03
 .byte 0x5c
 .byte 0x24
 .byte 0x04
-  .cv_loc 2 1 31 23
 .byte 0x44
 .byte 0x01
 .byte 0xe5
-  .cv_loc 2 1 31 28
 .byte 0x01
 .byte 0xdd
-  .cv_loc 2 1 31 33
 .byte 0x45
 .byte 0x01
 .byte 0xee
-  .cv_loc 2 1 31 38
 .byte 0x44
 .byte 0x03
 .byte 0x74
 .byte 0x24
 .byte 0x08
-  .cv_loc 2 1 31 43
 .byte 0x41
 .byte 0x01
 .byte 0xee
-  .cv_loc 2 1 31 48
 .byte 0x44
 .byte 0x03
 .byte 0x7c
 .byte 0x24
 .byte 0x10
-  .cv_loc 2 1 31 53
 .byte 0x45
 .byte 0x01
 .byte 0xf7
-  .cv_loc 2 1 31 5
 .byte 0x44
 .byte 0x89
 .byte 0xf8
-  .cv_loc 2 1 31 5
 .byte 0x48
 .byte 0x83
 .byte 0xc4

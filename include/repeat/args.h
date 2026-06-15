@@ -21,6 +21,7 @@ struct ParsedArgs
     std::string m_inputElf;
     std::string m_outputAssembly;
     bool m_showHelp = false;
+    bool m_columnInfo = false;
 };
 
 class ArgsParser
