@@ -40,6 +40,7 @@ set(REPEAT_GOLDEN_ASM_FILES
     cv_namespaces.s
     cv_nested_inlines.s
     cv_recursive.s
+    cv_scope_end.s
     cv_spill.s
     cv_static_methods.s
     cv_structs.s
@@ -88,6 +89,7 @@ repeat_add_mock_elf(cv_moving_var.so SRC data/cv_moving_var.c OPT -O2)
 repeat_add_mock_elf(cv_namespaces.so SRC data/cv_namespaces.cpp CXX)
 repeat_add_mock_elf(cv_nested_inlines.so SRC data/cv_nested_inlines.cpp CXX OPT -O0)
 repeat_add_mock_elf(cv_recursive.so SRC data/cv_recursive.c)
+repeat_add_mock_elf(cv_scope_end.so SRC data/cv_scope_end.c)
 repeat_add_mock_elf(cv_spill.so SRC data/cv_spill.c OPT -O2)
 repeat_add_mock_elf(cv_static_methods.so SRC data/cv_static_methods.cpp CXX)
 repeat_add_mock_elf(cv_structs.so SRC data/cv_structs.c)

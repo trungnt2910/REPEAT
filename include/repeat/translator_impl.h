@@ -406,7 +406,8 @@ private:
                << " - 2\n";
             os << "  .short " << llvm::format("0x%04x", proc_kind) << " # " << proc_comment << "\n";
             os << "  .long 0 # Parent\n";
-            os << "  .long .Lfunc_scope_end_" << func_name << " - .Lsym_begin # End offset\n";
+            os << "  .long .Lfunc_scope_end_record_" << func_name
+               << " - .Lsym_begin # End offset\n";
             os << "  .long 0 # Next\n";
             os << "  .long " << func_size << " # CodeSize\n";
             os << "  .long " << prologue_size << " # DbgStart\n";
@@ -462,6 +463,7 @@ private:
                 os << "  .p2align 2, 0\n";
             }
 
+            os << ".Lfunc_scope_end_record_" << func_name << ":\n";
             os << "  .short 2\n";
             os << "  .short 6 # S_END\n";
             os << "  .p2align 2, 0\n";

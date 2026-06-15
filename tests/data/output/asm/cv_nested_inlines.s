@@ -1066,7 +1066,7 @@ _Z11call_nestedi = __elf_seg_B + 0
   .short .Lfunc_sym_end__Z11call_nestedi - .Lfunc_sym_begin__Z11call_nestedi - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__Z11call_nestedi - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__Z11call_nestedi - .Lsym_begin # End offset
   .long 0 # Next
   .long 83 # CodeSize
   .long 4 # DbgStart
@@ -1322,6 +1322,7 @@ _Z11call_nestedi = __elf_seg_B + 0
   .p2align 2, 0
 .Linline_site_scope_end_1:
   .p2align 2, 0
+.Lfunc_scope_end_record__Z11call_nestedi:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

@@ -920,7 +920,7 @@ get_static_var = __elf_seg_B + 0
   .short .Lfunc_sym_end_get_static_var - .Lfunc_sym_begin_get_static_var - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_get_static_var - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_get_static_var - .Lsym_begin # End offset
   .long 0 # Next
   .long 18 # CodeSize
   .long 4 # DbgStart
@@ -946,6 +946,7 @@ get_static_var = __elf_seg_B + 0
   .p2align 2, 0
 .Lframe_proc_end_get_static_var:
   .p2align 2, 0
+.Lfunc_scope_end_record_get_static_var:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

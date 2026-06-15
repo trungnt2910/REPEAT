@@ -847,7 +847,7 @@ _Z9call_anonv = __elf_seg_B + 0
   .short .Lfunc_sym_end__Z9call_anonv - .Lfunc_sym_begin__Z9call_anonv - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__Z9call_anonv - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__Z9call_anonv - .Lsym_begin # End offset
   .long 0 # Next
   .long 18 # CodeSize
   .long 4 # DbgStart
@@ -898,6 +898,7 @@ _Z9call_anonv = __elf_seg_B + 0
   .byte 0
   .byte 0
   .p2align 2, 0
+.Lfunc_scope_end_record__Z9call_anonv:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

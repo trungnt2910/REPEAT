@@ -1,6 +1,6 @@
 # --- REPEAT: ELF Headers ---
 # --- REPEAT: CodeView Source Files ---
-  .cv_file 1 ".\\.\\data\\cv_local_functions.c"
+  .cv_file 1 ".\\.\\data\\cv_scope_end.c"
 # --- REPEAT: ELF Sections ---
 .section .elf, "rwx"
 .globl __elf_base
@@ -47,8 +47,8 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x58
-.byte 0x07
+.byte 0xa8
+.byte 0x06
 .byte 0x00
 .byte 0x00
 .byte 0x00
@@ -215,7 +215,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x2f
+.byte 0x12
 .byte 0x00
 .byte 0x00
 .byte 0x00
@@ -223,7 +223,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x2f
+.byte 0x12
 .byte 0x00
 .byte 0x00
 .byte 0x00
@@ -247,7 +247,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x02
 .byte 0x00
 .byte 0x00
@@ -255,7 +255,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -263,7 +263,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -279,7 +279,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x40
+.byte 0x58
 .byte 0x0d
 .byte 0x00
 .byte 0x00
@@ -303,7 +303,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x02
 .byte 0x00
 .byte 0x00
@@ -311,7 +311,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -319,7 +319,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -359,7 +359,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x02
 .byte 0x00
 .byte 0x00
@@ -367,7 +367,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -375,7 +375,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0xc0
+.byte 0xa8
 .byte 0x22
 .byte 0x00
 .byte 0x00
@@ -391,7 +391,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x40
+.byte 0x58
 .byte 0x0d
 .byte 0x00
 .byte 0x00
@@ -535,26 +535,26 @@ __elf_seg_A:
 .byte 0x4e
 .byte 0x55
 .byte 0x00
-.byte 0xaf
-.byte 0x72
-.byte 0x19
-.byte 0x33
 .byte 0xa4
-.byte 0xdb
-.byte 0x54
-.byte 0x68
-.byte 0x13
-.byte 0x44
-.byte 0x97
-.byte 0x4d
-.byte 0x95
-.byte 0x25
-.byte 0xb8
-.byte 0xd3
-.byte 0x41
-.byte 0xc9
-.byte 0xff
-.byte 0x37
+.byte 0x42
+.byte 0x9f
+.byte 0x28
+.byte 0xb9
+.byte 0x6e
+.byte 0xc5
+.byte 0xd7
+.byte 0xb4
+.byte 0xa6
+.byte 0xcb
+.byte 0x82
+.byte 0xbf
+.byte 0xfa
+.byte 0xb3
+.byte 0xec
+.byte 0x58
+.byte 0x11
+.byte 0xbc
+.byte 0xc8
 .byte 0x00
 .byte 0x00
 .byte 0x00
@@ -599,7 +599,7 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x19
+.byte 0x12
 .byte 0x00
 .byte 0x00
 .byte 0x00
@@ -626,26 +626,26 @@ __elf_seg_A:
 .byte 0x00
 .byte 0x00
 .byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x00
+.byte 0x80
 .byte 0x04
-.byte 0x02
-.byte 0x00
-.byte 0x00
-.byte 0x00
 .byte 0x01
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.byte 0x61
-.byte 0x9c
-.byte 0x03
-.byte 0x69
+.byte 0x3b
+.byte 0xaa
+.byte 0x49
+.byte 0xde
 .byte 0x00
-.byte 0x67
+.byte 0x73
+.byte 0x69
+.byte 0x6d
+.byte 0x70
 .byte 0x6c
-.byte 0x6f
-.byte 0x62
-.byte 0x61
-.byte 0x6c
+.byte 0x65
 .byte 0x5f
 .byte 0x66
 .byte 0x75
@@ -654,54 +654,10 @@ __elf_seg_A:
 .byte 0x00
 .org __elf_base + 4752
 __elf_seg_B:
-func_code_start_global_func:
+func_code_start_simple_func:
   .cv_func_id 0
-.seh_proc global_func
-  .cv_loc 0 1 7 0
-.byte 0x55
-.seh_pushreg rbp
-.byte 0x48
-.byte 0x89
-.byte 0xe5
-.seh_setframe rbp, 0
-.seh_endprologue
-.byte 0x48
-.byte 0x83
-.byte 0xec
-.byte 0x10
-.byte 0x89
-.byte 0x7d
-.byte 0xfc
-  .cv_loc 0 1 8 23
-.byte 0x8b
-.byte 0x7d
-.byte 0xfc
-  .cv_loc 0 1 8 12
-.byte 0xe8
-.byte 0x0d
-.byte 0x00
-.byte 0x00
-.byte 0x00
-  .cv_loc 0 1 8 5
-.byte 0x48
-.byte 0x83
-.byte 0xc4
-.byte 0x10
-.byte 0x5d
-.byte 0xc3
-.seh_endproc
-func_code_end_global_func:
-.byte 0x0f
-.byte 0x1f
-.byte 0x80
-.byte 0x00
-.byte 0x00
-.byte 0x00
-.byte 0x00
-func_code_start_local_func.4784:
-  .cv_func_id 1
-.seh_proc local_func.4784
-  .cv_loc 1 1 2 0
+.seh_proc simple_func
+  .cv_loc 0 1 2 0
 .byte 0x55
 .seh_pushreg rbp
 .byte 0x48
@@ -712,20 +668,23 @@ func_code_start_local_func.4784:
 .byte 0x89
 .byte 0x7d
 .byte 0xfc
-  .cv_loc 1 1 3 12
+.byte 0x89
+.byte 0x75
+.byte 0xf8
+  .cv_loc 0 1 3 12
 .byte 0x8b
 .byte 0x45
 .byte 0xfc
-  .cv_loc 1 1 3 14
-.byte 0x83
-.byte 0xc0
-.byte 0x01
-  .cv_loc 1 1 3 5
+  .cv_loc 0 1 3 20
+.byte 0x03
+.byte 0x45
+.byte 0xf8
+  .cv_loc 0 1 3 5
 .byte 0x5d
 .byte 0xc3
 .seh_endproc
-func_code_end_local_func.4784:
-.org __elf_base + 8896
+func_code_end_simple_func:
+.org __elf_base + 8872
 __elf_seg_C:
 .byte 0x06
 .byte 0x00
@@ -823,15 +782,13 @@ __elf_seg_C:
 .byte 0x00
 .byte 0x00
 .byte 0x00
-.org __elf_seg_C + 3392
+.org __elf_seg_C + 3416
 # --- REPEAT: ELF Exported Symbols ---
-cv_local_functions.c = __elf_seg_A + 0
-.def local_func.4784; .scl 3; .type 32; .endef
-local_func.4784 = __elf_seg_B + 32
+cv_scope_end.c = __elf_seg_A + 0
 _DYNAMIC = __elf_seg_C + 0
-.def global_func; .scl 2; .type 32; .endef
-.globl global_func
-global_func = __elf_seg_B + 0
+.def simple_func; .scl 2; .type 32; .endef
+.globl simple_func
+simple_func = __elf_seg_B + 0
 
 # --- REPEAT: CodeView Symbol Table (.debug$S) ---
 .section .debug$S,"r"
@@ -878,26 +835,26 @@ global_func = __elf_seg_B + 0
   .byte 0
   .p2align 2, 0
   .p2align 2, 0
-  # Function Symbol: global_func
-.Lfunc_sym_begin_global_func:
-  .short .Lfunc_sym_end_global_func - .Lfunc_sym_begin_global_func - 2
+  # Function Symbol: simple_func
+.Lfunc_sym_begin_simple_func:
+  .short .Lfunc_sym_end_simple_func - .Lfunc_sym_begin_simple_func - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_record_global_func - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_simple_func - .Lsym_begin # End offset
   .long 0 # Next
-  .long 25 # CodeSize
+  .long 18 # CodeSize
   .long 4 # DbgStart
   .long 0 # DbgEnd
   .long 4098 # FunctionType
-  .secrel32 global_func # CodeOffset
-  .secidx global_func # Segment
+  .secrel32 simple_func # CodeOffset
+  .secidx simple_func # Segment
   .byte 0 # Flags
-  .asciz "global_func"
+  .asciz "simple_func"
   .p2align 2, 0
-.Lfunc_sym_end_global_func:
+.Lfunc_sym_end_simple_func:
   # Frame Procedure Symbol
-.Lframe_proc_begin_global_func:
-  .short .Lframe_proc_end_global_func - .Lframe_proc_begin_global_func - 2
+.Lframe_proc_begin_simple_func:
+  .short .Lframe_proc_end_simple_func - .Lframe_proc_begin_simple_func - 2
   .short 0x1012 # S_FRAMEPROC
   .long 8 # TotalFrameBytes
   .long 0 # PaddingFrameBytes
@@ -907,10 +864,10 @@ global_func = __elf_seg_B + 0
   .short 0 # SectionIdOfExceptionHandler
   .long 0x28000 # Flags
   .p2align 2, 0
-.Lframe_proc_end_global_func:
-  # Local Variable: a
-  # Symbol Record: Kind=4414, Length=12
-  .byte 10
+.Lframe_proc_end_simple_func:
+  # Local Variable: param_a
+  # Symbol Record: Kind=4414, Length=20
+  .byte 18
   .byte 0
   .byte 62
   .byte 17
@@ -920,53 +877,25 @@ global_func = __elf_seg_B + 0
   .byte 0
   .byte 1
   .byte 0
+  .byte 112
   .byte 97
+  .byte 114
+  .byte 97
+  .byte 109
+  .byte 95
+  .byte 97
+  .byte 0
+  .byte 0
   .byte 0
   .short 14
   .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
   .long -4 # Offset
-  .secrel32 global_func + 0
-  .secidx global_func
-  .short 25
-  .p2align 2, 0
-.Lfunc_scope_end_record_global_func:
-  .short 2
-  .short 6 # S_END
-  .p2align 2, 0
-.Lfunc_scope_end_global_func:
-  # Function Symbol: local_func.4784
-.Lfunc_sym_begin_local_func.4784:
-  .short .Lfunc_sym_end_local_func.4784 - .Lfunc_sym_begin_local_func.4784 - 2
-  .short 0x1146 # S_LPROC32_ID
-  .long 0 # Parent
-  .long .Lfunc_scope_end_record_local_func.4784 - .Lsym_begin # End offset
-  .long 0 # Next
-  .long 15 # CodeSize
-  .long 4 # DbgStart
-  .long 0 # DbgEnd
-  .long 4099 # FunctionType
-  .secrel32 local_func.4784 # CodeOffset
-  .secidx local_func.4784 # Segment
-  .byte 0 # Flags
-  .asciz "local_func"
-  .p2align 2, 0
-.Lfunc_sym_end_local_func.4784:
-  # Frame Procedure Symbol
-.Lframe_proc_begin_local_func.4784:
-  .short .Lframe_proc_end_local_func.4784 - .Lframe_proc_begin_local_func.4784 - 2
-  .short 0x1012 # S_FRAMEPROC
-  .long 8 # TotalFrameBytes
-  .long 0 # PaddingFrameBytes
-  .long 0 # OffsetToPadding
-  .long 0 # BytesOfCalleeSavedRegisters
-  .long 0 # OffsetOfExceptionHandler
-  .short 0 # SectionIdOfExceptionHandler
-  .long 0x28000 # Flags
-  .p2align 2, 0
-.Lframe_proc_end_local_func.4784:
-  # Local Variable: a
-  # Symbol Record: Kind=4414, Length=12
-  .byte 10
+  .secrel32 simple_func + 0
+  .secidx simple_func
+  .short 18
+  # Local Variable: param_b
+  # Symbol Record: Kind=4414, Length=20
+  .byte 18
   .byte 0
   .byte 62
   .byte 17
@@ -976,35 +905,46 @@ global_func = __elf_seg_B + 0
   .byte 0
   .byte 1
   .byte 0
+  .byte 112
   .byte 97
+  .byte 114
+  .byte 97
+  .byte 109
+  .byte 95
+  .byte 98
+  .byte 0
+  .byte 0
   .byte 0
   .short 14
   .short 0x1142 # S_DEFRANGE_FRAMEPOINTER_REL
-  .long -4 # Offset
-  .secrel32 local_func.4784 + 0
-  .secidx local_func.4784
-  .short 15
+  .long -8 # Offset
+  .secrel32 simple_func + 0
+  .secidx simple_func
+  .short 18
   .p2align 2, 0
-.Lfunc_scope_end_record_local_func.4784:
+.Lfunc_scope_end_record_simple_func:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
-.Lfunc_scope_end_local_func.4784:
+.Lfunc_scope_end_simple_func:
 .Lsym_end:
-  .cv_linetable 0, func_code_start_global_func, func_code_end_global_func
-  .cv_linetable 1, func_code_start_local_func.4784, func_code_end_local_func.4784
+  .cv_linetable 0, func_code_start_simple_func, func_code_end_simple_func
   .cv_filechecksums
   .cv_stringtable
 
 # --- REPEAT: CodeView Type Table (.debug$T) ---
 .section .debug$T,"r"
   .long 4 # CodeView signature
-  # TypeIndex=4096, Length=12, Leaf=4609
-  .byte 10
+  # TypeIndex=4096, Length=16, Leaf=4609
+  .byte 14
   .byte 0
   .byte 1
   .byte 18
-  .byte 1
+  .byte 2
+  .byte 0
+  .byte 0
+  .byte 0
+  .byte 116
   .byte 0
   .byte 0
   .byte 0
@@ -1023,7 +963,7 @@ global_func = __elf_seg_B + 0
   .byte 0
   .byte 0
   .byte 0
-  .byte 1
+  .byte 2
   .byte 0
   .byte 0
   .byte 16
@@ -1042,40 +982,15 @@ global_func = __elf_seg_B + 0
   .byte 16
   .byte 0
   .byte 0
-  .byte 103
+  .byte 115
+  .byte 105
+  .byte 109
+  .byte 112
   .byte 108
-  .byte 111
-  .byte 98
-  .byte 97
-  .byte 108
+  .byte 101
   .byte 95
   .byte 102
   .byte 117
   .byte 110
   .byte 99
   .byte 0
-  # TypeIndex=4099, Length=24, Leaf=5633
-  .byte 22
-  .byte 0
-  .byte 1
-  .byte 22
-  .byte 0
-  .byte 0
-  .byte 0
-  .byte 0
-  .byte 1
-  .byte 16
-  .byte 0
-  .byte 0
-  .byte 108
-  .byte 111
-  .byte 99
-  .byte 97
-  .byte 108
-  .byte 95
-  .byte 102
-  .byte 117
-  .byte 110
-  .byte 99
-  .byte 0
-  .byte 241

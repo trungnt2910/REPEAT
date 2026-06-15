@@ -2226,7 +2226,7 @@ g8 = __elf_seg_D + 28
   .short .Lfunc_sym_end_use - .Lfunc_sym_begin_use - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_use - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_use - .Lsym_begin # End offset
   .long 0 # Next
   .long 10 # CodeSize
   .long 0 # DbgStart
@@ -2273,6 +2273,7 @@ g8 = __elf_seg_D + 28
   .secidx use
   .short 10
   .p2align 2, 0
+.Lfunc_scope_end_record_use:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -2282,7 +2283,7 @@ g8 = __elf_seg_D + 28
   .short .Lfunc_sym_end_use_many - .Lfunc_sym_begin_use_many - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_use_many - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_use_many - .Lsym_begin # End offset
   .long 0 # Next
   .long 33 # CodeSize
   .long 0 # DbgStart
@@ -2474,6 +2475,7 @@ g8 = __elf_seg_D + 28
   .secidx use_many
   .short 33
   .p2align 2, 0
+.Lfunc_scope_end_record_use_many:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -2483,7 +2485,7 @@ g8 = __elf_seg_D + 28
   .short .Lfunc_sym_end_test_spill - .Lfunc_sym_begin_test_spill - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_test_spill - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_test_spill - .Lsym_begin # End offset
   .long 0 # Next
   .long 200 # CodeSize
   .long 198 # DbgStart
@@ -2822,6 +2824,7 @@ g8 = __elf_seg_D + 28
   .secidx test_spill
   .short 12
   .p2align 2, 0
+.Lfunc_scope_end_record_test_spill:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

@@ -1094,7 +1094,7 @@ normal_func = __elf_seg_B + 0
   .short .Lfunc_sym_end_normal_func - .Lfunc_sym_begin_normal_func - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_normal_func - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_normal_func - .Lsym_begin # End offset
   .long 0 # Next
   .long 28 # CodeSize
   .long 4 # DbgStart
@@ -1140,6 +1140,7 @@ normal_func = __elf_seg_B + 0
   .secidx normal_func
   .short 28
   .p2align 2, 0
+.Lfunc_scope_end_record_normal_func:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

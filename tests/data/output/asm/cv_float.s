@@ -824,7 +824,7 @@ float_func = __elf_seg_B + 0
   .short .Lfunc_sym_end_float_func - .Lfunc_sym_begin_float_func - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_float_func - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_float_func - .Lsym_begin # End offset
   .long 0 # Next
   .long 9 # CodeSize
   .long 0 # DbgStart
@@ -916,6 +916,7 @@ float_func = __elf_seg_B + 0
   .secidx float_func
   .short 4
   .p2align 2, 0
+.Lfunc_scope_end_record_float_func:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

@@ -951,7 +951,7 @@ global_point = __elf_seg_D + 0
   .short .Lfunc_sym_end_get_val - .Lfunc_sym_begin_get_val - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_get_val - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_get_val - .Lsym_begin # End offset
   .long 0 # Next
   .long 15 # CodeSize
   .long 4 # DbgStart
@@ -997,6 +997,7 @@ global_point = __elf_seg_D + 0
   .secidx get_val
   .short 15
   .p2align 2, 0
+.Lfunc_scope_end_record_get_val:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

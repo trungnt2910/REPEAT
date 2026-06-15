@@ -71247,7 +71247,7 @@ huge_func = __elf_seg_B + 16
   .short .Lfunc_sym_end_use - .Lfunc_sym_begin_use - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_use - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_use - .Lsym_begin # End offset
   .long 0 # Next
   .long 10 # CodeSize
   .long 0 # DbgStart
@@ -71294,6 +71294,7 @@ huge_func = __elf_seg_B + 16
   .secidx use
   .short 10
   .p2align 2, 0
+.Lfunc_scope_end_record_use:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -71303,7 +71304,7 @@ huge_func = __elf_seg_B + 16
   .short .Lfunc_sym_end_huge_func - .Lfunc_sym_begin_huge_func - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end_huge_func - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record_huge_func - .Lsym_begin # End offset
   .long 0 # Next
   .long 70022 # CodeSize
   .long 1 # DbgStart
@@ -71389,6 +71390,7 @@ huge_func = __elf_seg_B + 16
   .secidx huge_func
   .short 1
   .p2align 2, 0
+.Lfunc_scope_end_record_huge_func:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

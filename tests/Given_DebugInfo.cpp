@@ -973,5 +973,28 @@ TEST_F(Given_DebugInfo, When_TranslatingELFWithDebugInfo_AllCodeviewRecordsArePa
     }
 }
 
+TEST_F(Given_DebugInfo, When_TranslatingFunction_EmitsCorrectEndOffsetPointer)
+{
+    ASSERT_TRUE(std::filesystem::exists(GetTestDataPath("data/cv_scope_end.so")))
+        << "File not found: " << GetTestDataPath("data/cv_scope_end.so");
+    Translator translator(GetTestDataPath("data/cv_scope_end.so"));
+    std::error_code ec = translator.Load();
+    ASSERT_FALSE(ec) << "Failed to load CV scope end ELF: " << ec.message();
+    std::string asm_output;
+    llvm::raw_string_ostream os(asm_output);
+
+    translator.Translate(os);
+    os.flush();
+
+    EXPECT_NE(asm_output.find(".Lfunc_scope_end_record_simple_func - .Lsym_begin # End offset"),
+              std::string::npos)
+        << "Missing correct End offset pointer for simple_func";
+    EXPECT_NE(
+        asm_output.find(".Lfunc_scope_end_record_simple_func:\n  .short 2\n  .short 6 # S_END"),
+        std::string::npos)
+        << "Missing correct S_END record label for simple_func";
+    ExpectOutputMatchesGolden(asm_output, "data/output/asm/cv_scope_end.s");
+}
+
 } // namespace test
 } // namespace repeat

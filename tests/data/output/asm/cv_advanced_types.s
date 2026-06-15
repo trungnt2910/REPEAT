@@ -2242,7 +2242,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .short .Lfunc_sym_end__Z4mainv - .Lfunc_sym_begin__Z4mainv - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__Z4mainv - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__Z4mainv - .Lsym_begin # End offset
   .long 0 # Next
   .long 599 # CodeSize
   .long 4 # DbgStart
@@ -2512,6 +2512,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .p2align 2, 0
 .Linline_site_scope_end_1:
   .p2align 2, 0
+.Lfunc_scope_end_record__Z4mainv:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -2521,7 +2522,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .short .Lfunc_sym_end__ZL24test_parameter_registersiiiiii.5776 - .Lfunc_sym_begin__ZL24test_parameter_registersiiiiii.5776 - 2
   .short 0x1146 # S_LPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__ZL24test_parameter_registersiiiiii.5776 - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__ZL24test_parameter_registersiiiiii.5776 - .Lsym_begin # End offset
   .long 0 # Next
   .long 50 # CodeSize
   .long 4 # DbgStart
@@ -2708,6 +2709,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .byte 109
   .byte 0
   .p2align 2, 0
+.Lfunc_scope_end_record__ZL24test_parameter_registersiiiiii.5776:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -2717,7 +2719,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .short .Lfunc_sym_end__ZN13AdvancedClassC2Ev - .Lfunc_sym_begin__ZN13AdvancedClassC2Ev - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__ZN13AdvancedClassC2Ev - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__ZN13AdvancedClassC2Ev - .Lsym_begin # End offset
   .long 0 # Next
   .long 79 # CodeSize
   .long 4 # DbgStart
@@ -2767,6 +2769,7 @@ _ZN13AdvancedClassC2Ev = __elf_seg_B + 672
   .secidx _ZN13AdvancedClassC2Ev
   .short 79
   .p2align 2, 0
+.Lfunc_scope_end_record__ZN13AdvancedClassC2Ev:
   .short 2
   .short 6 # S_END
   .p2align 2, 0

@@ -1388,7 +1388,7 @@ global_static_inst = __elf_seg_D + 32
   .short .Lfunc_sym_end__Z11call_staticv - .Lfunc_sym_begin__Z11call_staticv - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__Z11call_staticv - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__Z11call_staticv - .Lsym_begin # End offset
   .long 0 # Next
   .long 11 # CodeSize
   .long 4 # DbgStart
@@ -1414,6 +1414,7 @@ global_static_inst = __elf_seg_D + 32
   .p2align 2, 0
 .Lframe_proc_end__Z11call_staticv:
   .p2align 2, 0
+.Lfunc_scope_end_record__Z11call_staticv:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
@@ -1423,7 +1424,7 @@ global_static_inst = __elf_seg_D + 32
   .short .Lfunc_sym_end__ZN17StaticMethodClass11GetConstantEv - .Lfunc_sym_begin__ZN17StaticMethodClass11GetConstantEv - 2
   .short 0x1147 # S_GPROC32_ID
   .long 0 # Parent
-  .long .Lfunc_scope_end__ZN17StaticMethodClass11GetConstantEv - .Lsym_begin # End offset
+  .long .Lfunc_scope_end_record__ZN17StaticMethodClass11GetConstantEv - .Lsym_begin # End offset
   .long 0 # Next
   .long 11 # CodeSize
   .long 4 # DbgStart
@@ -1449,6 +1450,7 @@ global_static_inst = __elf_seg_D + 32
   .p2align 2, 0
 .Lframe_proc_end__ZN17StaticMethodClass11GetConstantEv:
   .p2align 2, 0
+.Lfunc_scope_end_record__ZN17StaticMethodClass11GetConstantEv:
   .short 2
   .short 6 # S_END
   .p2align 2, 0
